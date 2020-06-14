@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "ir.goliforoshani.markeet"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig getSigningConfig()
+            applicationVariants.all { variant ->
+                variant.outputs.all {
+                    def appName = "Markeet"
+                    if (outputFileName != null && outputFileName.endsWith('.apk')) {
+                        outputFileName = appName + " " + defaultConfig.versionName + ".apk"
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* IMPORTANT :
+ * Be careful when update dependencies, different version library may caused error */
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // library for user interface
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.balysv:material-ripple:1.0.2'
+
+    // library for api
+    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+    implementation 'com.google.code.gson:gson:2.8.4'
+
+    // image loader
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+
+    // firebase library
+    implementation 'com.google.firebase:firebase-core:16.0.3'
+    implementation 'com.google.firebase:firebase-messaging:17.3.0'
+    implementation 'com.google.firebase:firebase-config:16.0.0'
+    implementation 'com.google.firebase:firebase-ads:15.0.1'
+
+    // other library
+    implementation 'com.google.android.ads.consent:consent-library:1.0.6'
+    implementation 'com.github.samanzamani.persiandate:PersianDate:0.8'
+    implementation 'com.mohamadamin:persianmaterialdatetimepicker:1.2.1'
+
+
+}
+
+apply plugin: 'com.google.gms.google-services'
