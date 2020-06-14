@@ -241,10 +241,10 @@ public class ActivityCheckout extends AppCompatActivity {
             Snackbar.make(parent_view, R.string.invalid_name, Snackbar.LENGTH_SHORT).show();
             return;
         }
-        if (!validateEmail()) {
+        /*if (!validateEmail()) {
             Snackbar.make(parent_view, R.string.invalid_email, Snackbar.LENGTH_SHORT).show();
             return;
-        }
+        }*/
         if (!validatePhone()) {
             Snackbar.make(parent_view, R.string.invalid_phone, Snackbar.LENGTH_SHORT).show();
             return;
@@ -264,7 +264,7 @@ public class ActivityCheckout extends AppCompatActivity {
 
         buyerProfile = new BuyerProfile();
         buyerProfile.name = buyer_name.getText().toString();
-        buyerProfile.email = email.getText().toString();
+        buyerProfile.email = null;
         buyerProfile.phone = phone.getText().toString();
         buyerProfile.address = address.getText().toString();
         sharedPref.setBuyerProfile(buyerProfile);
