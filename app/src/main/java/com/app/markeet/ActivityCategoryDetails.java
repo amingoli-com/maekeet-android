@@ -45,6 +45,7 @@ import com.app.markeet.utils.Tools;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -233,6 +234,7 @@ public class ActivityCategoryDetails extends AppCompatActivity {
         super.onBackPressed();
     }
 
+    @SuppressLint("NewApi")
     @Override
     protected void onResume() {
         super.onResume();
@@ -241,6 +243,7 @@ public class ActivityCategoryDetails extends AppCompatActivity {
             cart_count = new_cart_count;
             invalidateOptionsMenu();
         }
+        mAdapter.notifyDataSetChanged();
     }
 
 

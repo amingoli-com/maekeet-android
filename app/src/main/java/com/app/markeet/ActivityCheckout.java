@@ -440,18 +440,18 @@ public class ActivityCheckout extends AppCompatActivity {
                             +" "+ getString(R.string.between_9_13),
                     getString(R.string.today) +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[1])
                             +" "+ getString(R.string.between_16_21),
-                    getString(R.string.tomorrow) +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[2])
-                            + getString(R.string.between_9_13),
-                    getString(R.string.tomorrow) +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[3])
+                    getString(R.string.tomorrow)  +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[2])
+                            +" "+ getString(R.string.between_9_13),
+                    getString(R.string.tomorrow)  +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[3])
                             +" "+ getString(R.string.between_16_21)
             };
         }else if (hour >= 10 && hour<20){
             day = new String[]{
                     getString(R.string.today) +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[1])
                             +" "+ getString(R.string.between_16_21),
-                    getString(R.string.tomorrow) +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[2])
+                    getString(R.string.tomorrow)  +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[2])
                             +" "+ getString(R.string.between_9_13),
-                    getString(R.string.tomorrow) +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[3])
+                    getString(R.string.tomorrow)  +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[3])
                             +" "+ getString(R.string.between_16_21)
             };
         }else {

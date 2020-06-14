@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="markeet_android/app" />
-      <module fileurl="file://$PROJECT_DIR$/markeet_android.iml" filepath="$PROJECT_DIR$/markeet_android.iml" group="markeet_android" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="maekeet-android/app" />
+      <module fileurl="file://$PROJECT_DIR$/maekeet-android.iml" filepath="$PROJECT_DIR$/maekeet-android.iml" group="maekeet-android" />
     </modules>
   </component>
 </project>
