@@ -1,5 +1,6 @@
 package com.app.markeet;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -166,6 +167,7 @@ public class ActivityCategoryDetails extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("NewApi")
     private void displayCategoryData(Category c) {
         ((AppBarLayout) findViewById(R.id.app_bar_layout)).setBackgroundColor(Color.parseColor(c.color));
         fab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(c.color)));
