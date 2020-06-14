@@ -93,7 +93,7 @@
     <string name="cost_details">جزئیات هزینه</string>
     <string name="total_order">جمع &#160;</string>
 <!--    <string name="tax">مالیات &#160;</string>-->
-    <string name="tax">هزینه ارسال رایگان است</string>
+    <string name="tax">هزینه ارسال</string>
     <string name="total_fess">جمع کل &#160;</string>
     <string name="buyer_profile">مشخصات خریدار</string>
     <string name="hint_name">نام</string>
