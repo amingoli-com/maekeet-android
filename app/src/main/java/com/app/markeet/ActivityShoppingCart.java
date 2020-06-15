@@ -4,6 +4,8 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.app.markeet.data.AppConfig;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
@@ -19,6 +21,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.markeet.adapter.AdapterShoppingCart;
 import com.app.markeet.data.DatabaseHandler;
@@ -179,9 +182,11 @@ public class ActivityShoppingCart extends AppCompatActivity {
         ((ImageView) dialog.findViewById(R.id.img_increase)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (model.amount < model.stock) {
+                if (model.amount < model.stock && model.amount < AppConfig.TOTAL_AMOUNT) {
                     model.amount = model.amount + 1;
                     qty.setText(model.amount + "");
+                }else {
+                    Toast.makeText(ActivityShoppingCart.this, getString(R.string.maximum_inventory), Toast.LENGTH_SHORT).show();
                 }
             }
         });

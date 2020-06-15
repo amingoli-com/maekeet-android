@@ -34,4 +34,7 @@ public class AppConfig {
      */
     public static final boolean PRICE_CURRENCY_IN_END = true;
 
+    // in ActivityShoppingCart in dialogCartAction() Method
+    public static final int TOTAL_AMOUNT = 20;
+
 }

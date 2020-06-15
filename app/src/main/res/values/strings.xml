@@ -232,5 +232,6 @@
     <string name="between_9_13">بین ۹ تا ۱۳ ظهر</string>
     <string name="between_16_21">بین ۱۶ تا ۲۱ شب</string>
     <string name="order_code">کد پیگیری : &#160;</string>
+    <string name="maximum_inventory">امکان اضافه کردن وجود ندارد</string>
 
 </resources>
