@@ -6,7 +6,7 @@
     <string name="content_about">مارکت یه فروشگاه اینترنتی است که انواع مختلفی از محصولات پایه را به فروش میرساند، مارکت فعلا در شهر قم فعالیت خود را آغاز کرده و بزودی به شهر های شما هم سفر می کند، شما میتوانید برای همکاری باما با شماره پشتیبانی تماس حاصل فرمایید (۰۹۱۰۰۵۳۰۵۹۳)</string>
 
     <string name="title_activity_news_info">اخبار</string>
-    <string name="title_activity_notifications">اعلان ها</string>
+    <string name="title_activity_notifications">پیام ها</string>
     <string name="title_activity_wishlist">نشان شده ها</string>
     <string name="title_activity_cart">سبد خرید</string>
     <string name="title_activity_checkout">ثبت نهایی</string>
@@ -20,7 +20,7 @@
     <string name="str_nav_wishlist">نشان شده ها</string>
     <string name="str_nav_news">اخبار</string>
     <string name="str_nav_history">تاریخچه سفارشات</string>
-    <string name="str_nav_notifications">اعلان ها</string>
+    <string name="str_nav_notifications">پیام ها</string>
     <string name="sub_title_nav_others">موارد دیگر</string>
     <string name="str_nav_instruction">راهنما</string>
     <string name="str_nav_setting">تنظیمات</string>
@@ -28,7 +28,7 @@
     <string name="str_nav_about">درباره</string>
     <string name="press_again_exit_app">برای خروج دوباره لمس کنید</string>
 
-    <string name="title_what_news">خبر های ویژه</string>
+    <string name="title_what_news">اخبار ویژه</string>
     <string name="title_category">دسته بندی ها</string>
 
     <!--All data for ActivityCategoryDetails.java -->
@@ -38,7 +38,7 @@
     <string name="title_dialog_sort">نمایش بر اساس</string>
 
     <!--All data for ActivityProductDetails.java -->
-    <string name="please_wait_text">لطفاً منتظر بمانید تا اطلاعات بارگیری شود</string>
+    <string name="please_wait_text">لطفاً منتظر بمانید</string>
     <string name="categories_product">"دسته بندی : "</string>
     <string name="cannot_add_wishlist">به نشان شده ها اضافه نمیشه</string>
     <string name="add_wishlist">نشان کردن</string>
@@ -55,14 +55,14 @@
 
     <!--All data for ActivitySplash.java -->
     <string name="title_unable_connect">به سرور متصل نمیشیم</string>
-    <string name="msg_unable_connect">سرور موقتا درحال بروزرسانی است دقایقی دیگر تلاش کنید</string>
+    <string name="msg_unable_connect">سرور موقتا دردسترس نیست دقایقی دیگر تلاش کنید</string>
     <string name="msg_app_out_date">این نسخه منقضی شده!</string>
     <string name="msg_no_internet">اتصال به اینترنت را بررسی کنید</string>
     <string name="title_info">هشدار</string>
     <string name="title_no_internet">به اینترنت وصل شوید</string>
 
     <!--All data for ActivityWishlist.java -->
-    <string name="msg_wishlist_empty">لیست خالیه</string>
+    <string name="msg_wishlist_empty">چیزی برای حذف وجود ندارد</string>
     <string name="title_menu_wishlist">نشان شده ها</string>
 
     <!--All data for ActivityShoppingCart.java -->
@@ -78,8 +78,8 @@
     <!--All data for ActivitySearch.java -->
     <string name="ALL">همه</string>
     <string name="Category">"دسته بندی : &#160;"</string>
-    <string name="hint_input_search">ورودی جستجو</string>
-    <string name="please_fill">لطفا ورودی جستجو را پر کنید</string>
+    <string name="hint_input_search">نام محصول مورد نظر</string>
+    <string name="please_fill">چیزی برای جستجو وارد کنید</string>
 
     <!--All data for ActivityOrderHistory.java -->
     <string name="msg_history_empty">تاریخچه سفارش خالی است</string>
