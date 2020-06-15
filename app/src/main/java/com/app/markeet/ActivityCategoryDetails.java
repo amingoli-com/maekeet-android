@@ -122,6 +122,7 @@ public class ActivityCategoryDetails extends AppCompatActivity {
             @Override
             public void updateBadge() {
                 setupBadge();
+                invalidateOptionsMenu();
             }
         });
 
@@ -382,7 +383,6 @@ public class ActivityCategoryDetails extends AppCompatActivity {
             if (cart_count > 9) count_txt = "9+";
             ((TextView) cart_badge.findViewById(R.id.counter)).setText(count_txt);
         }
-        invalidateOptionsMenu();
     }
 
     boolean isFabHide = false;
