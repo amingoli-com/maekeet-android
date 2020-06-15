@@ -3,6 +3,7 @@ package com.app.markeet;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.app.markeet.data.AppConfig;
@@ -13,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
+
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,6 +44,7 @@ public class ActivityShoppingCart extends AppCompatActivity {
     private TextView price_total,check_out;
     private SharedPref sharedPref;
     private Info info;
+    private boolean warning = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -186,7 +190,18 @@ public class ActivityShoppingCart extends AppCompatActivity {
                     model.amount = model.amount + 1;
                     qty.setText(model.amount + "");
                 }else {
-                    Toast.makeText(ActivityShoppingCart.this, getString(R.string.maximum_inventory), Toast.LENGTH_SHORT).show();
+                    if (!warning){
+                        warning = true;
+                        qty.setTextColor(Color.RED);
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                qty.setTextColor(Color.BLACK);
+                                warning = false;
+                            }
+                        },200);
+                    }
+
                 }
             }
         });
