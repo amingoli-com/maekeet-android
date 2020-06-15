@@ -34,8 +34,8 @@
     <!--All data for ActivityCategoryDetails.java -->
     <string name="title_menu_search">جستجو</string>
     <string name="title_menu_delete">حذف</string>
-    <string name="title_menu_sort">بر اساس محصولات</string>
-    <string name="title_dialog_sort">بر اساس محصولات</string>
+    <string name="title_menu_sort">نمایش بر اساس</string>
+    <string name="title_dialog_sort">نمایش بر اساس</string>
 
     <!--All data for ActivityProductDetails.java -->
     <string name="please_wait_text">لطفاً منتظر بمانید تا اطلاعات بارگیری شود</string>
@@ -186,11 +186,11 @@
     <string name="version_unknown">نا مشخص</string>
 
     <!-- Sort By Label -->
-    <string name="sort_new_old">بر اساس جدیدترین</string>
-    <string name="sort_old_new">بر اساس قدیمی ترین</string>
-    <string name="sort_low_high">بر اساس ارزانترین</string>
-    <string name="sort_high_low">بر اساس گرانترین</string>
-    <string name="sort_discount">بر اساس بیشترین موجودی</string>
+    <string name="sort_new_old">جدیدترین</string>
+    <string name="sort_old_new">قدیمی ترین</string>
+    <string name="sort_low_high">ارزانترین</string>
+    <string name="sort_high_low">گرانترین</string>
+    <string name="sort_discount">بیشترین موجودی</string>
 
     <!-- Other String -->
     <string name="failed_text">بارگیری انجام نشد</string>
