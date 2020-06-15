@@ -61,8 +61,16 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="top"
-                        android:orientation="horizontal">
+                        android:gravity="center|top"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/price_strike"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="30,000 IDR"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+                            android:textColor="@android:color/holo_red_dark" />
 
                         <TextView
                             android:id="@+id/price"
@@ -72,19 +80,6 @@
                             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
                             android:textColor="@color/colorPrice"
                             android:textStyle="bold" />
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:layout_weight="1" />
-
-                        <TextView
-                            android:id="@+id/price_strike"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="30,000 IDR"
-                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
-                            android:textColor="@color/grey_60" />
 
                     </LinearLayout>
 
