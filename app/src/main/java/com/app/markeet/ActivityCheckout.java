@@ -264,7 +264,7 @@ public class ActivityCheckout extends AppCompatActivity {
 
         buyerProfile = new BuyerProfile();
         buyerProfile.name = buyer_name.getText().toString();
-        buyerProfile.email = null;
+        buyerProfile.email = "buyer@amingoli.com";
         buyerProfile.phone = phone.getText().toString();
         buyerProfile.address = address.getText().toString();
         sharedPref.setBuyerProfile(buyerProfile);
