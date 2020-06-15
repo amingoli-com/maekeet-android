@@ -233,5 +233,6 @@
     <string name="between_16_21">بین ۱۶ تا ۲۱ شب</string>
     <string name="order_code">کد پیگیری : &#160;</string>
     <string name="maximum_inventory">امکان اضافه کردن وجود ندارد</string>
+    <string name="desc_shopping_cart">با لمس بر روی محصولات تعداد آنها را مشخص کنید</string>
 
 </resources>
