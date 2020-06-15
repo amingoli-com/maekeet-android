@@ -186,22 +186,15 @@ public class ActivityShoppingCart extends AppCompatActivity {
         ((ImageView) dialog.findViewById(R.id.img_increase)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (model.amount < model.stock && model.amount < AppConfig.TOTAL_AMOUNT) {
-                    model.amount = model.amount + 1;
-                    qty.setText(model.amount + "");
-                }else {
-                    if (!warning){
-                        warning = true;
-                        qty.setTextColor(Color.RED);
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                qty.setTextColor(Color.BLACK);
-                                warning = false;
-                            }
-                        },200);
+                if (model.amount < model.stock) {
+                    if (model.amount < AppConfig.TOTAL_AMOUNT){
+                        model.amount = model.amount + 1;
+                        qty.setText(model.amount + "");
+                    }else {
+                        warningMaximumAmount(qty);
                     }
-
+                }else {
+                    warningMaximumAmount(qty);
                 }
             }
         });
@@ -228,6 +221,20 @@ public class ActivityShoppingCart extends AppCompatActivity {
         });
         dialog.show();
         dialog.getWindow().setAttributes(lp);
+    }
+
+    private void warningMaximumAmount(final TextView qty){
+        if (!warning){
+            warning = true;
+            qty.setTextColor(Color.RED);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    qty.setTextColor(Color.BLACK);
+                    warning = false;
+                }
+            },200);
+        }
     }
 
     public void dialogDeleteConfirmation() {
