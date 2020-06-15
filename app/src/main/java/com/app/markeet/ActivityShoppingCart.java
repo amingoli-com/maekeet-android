@@ -189,7 +189,12 @@ public class ActivityShoppingCart extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 db.saveCart(model);
-                displayData();
+                try {
+                    adapter.notifyDataSetChanged();
+                    setTotalPrice();
+                }catch (Exception e){
+                    displayData();
+                }
                 dialog.dismiss();
             }
         });
