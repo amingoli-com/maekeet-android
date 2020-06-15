@@ -17,4 +17,10 @@
         app:actionLayout="@layout/menu_toolbar_cart"
         app:showAsAction="always" />
 
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search"
+        android:orderInCategory="100"
+        android:title="@string/title_menu_search"
+        app:showAsAction="always" />
 </menu>

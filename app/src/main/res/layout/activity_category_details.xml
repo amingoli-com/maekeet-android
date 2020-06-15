@@ -121,7 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/spacing_large"
         android:clickable="true"
-        android:src="@drawable/ic_search"
+        android:src="@drawable/ic_cart"
         android:tint="@android:color/white"
         app:rippleColor="@android:color/white"
         app:backgroundTint="@color/colorPrimary"

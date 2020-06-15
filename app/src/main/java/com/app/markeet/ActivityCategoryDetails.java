@@ -164,7 +164,7 @@ public class ActivityCategoryDetails extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ActivitySearch.navigate(ActivityCategoryDetails.this, category);
+                startActivity(new Intent(ActivityCategoryDetails.this, ActivityShoppingCart.class));
             }
         });
     }
@@ -218,15 +218,21 @@ public class ActivityCategoryDetails extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int item_id = item.getItemId();
-        if (item_id == android.R.id.home) {
-            super.onBackPressed();
-        } else if (item_id == R.id.action_sort) {
-            showDialogProductSort(item);
-        } else if (item_id == R.id.action_cart) {
-            Intent i = new Intent(this, ActivityShoppingCart.class);
-            startActivity(i);
+        switch (item_id){
+            case R.id.action_search:
+                ActivitySearch.navigate(ActivityCategoryDetails.this, category);
+                break;
+            case R.id.action_cart:
+                Intent i = new Intent(this, ActivityShoppingCart.class);
+                startActivity(i);
+                break;
+            case R.id.action_sort:
+                showDialogProductSort(item);
+                break;
+            default:
+                super.onBackPressed();
+                break;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
