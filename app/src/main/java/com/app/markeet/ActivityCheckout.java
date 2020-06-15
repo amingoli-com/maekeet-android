@@ -208,10 +208,11 @@ public class ActivityCheckout extends AppCompatActivity {
         setTotalPrice();
         if (buyerProfile != null) {
             buyer_name.setText(buyerProfile.name);
-            email.setText(buyerProfile.email);
+//            email.setText(buyerProfile.email);
             phone.setText(buyerProfile.phone);
             address.setText(buyerProfile.address);
         }
+        email.setText("buyer@amingoli.com");
     }
 
     private void setTotalPrice() {
@@ -264,7 +265,7 @@ public class ActivityCheckout extends AppCompatActivity {
 
         buyerProfile = new BuyerProfile();
         buyerProfile.name = buyer_name.getText().toString();
-        buyerProfile.email = "buyer@amingoli.com";
+        buyerProfile.email = email.getText().toString();
         buyerProfile.phone = phone.getText().toString();
         buyerProfile.address = address.getText().toString();
         sharedPref.setBuyerProfile(buyerProfile);
