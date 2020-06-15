@@ -90,37 +90,37 @@
     <string name="default_notification_channel_id">پیش فرض</string>
 
     <!--All data for ActivityCheckout.java -->
-    <string name="cost_details">جزئیات هزینه</string>
+    <string name="cost_details">هزینه ها</string>
     <string name="total_order">جمع &#160;</string>
 <!--    <string name="tax">مالیات &#160;</string>-->
     <string name="tax">هزینه ارسال</string>
     <string name="total_fess">جمع کل &#160;</string>
-    <string name="buyer_profile">مشخصات خریدار</string>
+    <string name="buyer_profile">مشخصات شما</string>
     <string name="hint_name">نام</string>
     <string name="hint_email">ایمیل</string>
     <string name="hint_phone">تلفن</string>
-    <string name="hint_address">آدرس</string>
+    <string name="hint_address">آدرس (کامل وارد کنید)</string>
     <string name="hint_shipping">روش دریافت</string>
     <string name="choose_shipping">انتخاب روش دریافت</string>
     <string name="hint_date_ship">تاریخ دریافت</string>
     <string name="hint_comment">توضیحات</string>
-    <string name="product_order_list">لیست سفارشات</string>
+    <string name="product_order_list">سفارشات شما</string>
 
     <string name="invalid_name">نام نامعتبر است</string>
-    <string name="invalid_email">ایمیل  نامعتبر است</string>
+    <string name="invalid_email">ایمیل نامعتبر است</string>
     <string name="invalid_phone">تلفن نامعتبر است</string>
     <string name="invalid_address">آدرس نامعتبر است</string>
-    <string name="invalid_shipping">روش دریافت نامعتبر است</string>
-    <string name="invalid_date_ship">تاریخ  نامعتبر است</string>
+    <string name="invalid_shipping">روش دریافت وارد نشده</string>
+    <string name="invalid_date_ship">تاریخ دریافت را مشخص بفرمایید</string>
     <string name="invalid_comment">توضیحات نامعتبر است</string>
 
     <string name="title_please_wait">صبر کنید</string>
     <string name="content_submit_checkout">تسویه حساب &#8230;</string>
-    <string name="confirmation">تائیدیه</string>
-    <string name="confirm_checkout">مطمئن هستید که می خواهید این سفارش را پرداخت کنید؟</string>
-    <string name="failed_checkout">اوه ، هنگام سفارش پرداخت انجام نشد  اطمینان حاصل کنید که ارتباط اینترنتی دارید یا در صورت نیاز به راهنما از طریق تنظیمات منو با ما تماس بگیرید</string>
+    <string name="confirmation">تایید سفارش</string>
+    <string name="confirm_checkout">مطمئن هستید که می خواهید این سفارش را ثبت کنید؟</string>
+    <string name="failed_checkout">هنگام ثبت سفارش مشکلی پیش آمد! اطمینان حاصل کنید که ارتباط اینترنتی دارید یا در صورت نیاز با پشتیبانی تماس بگیرید</string>
     <string name="success_checkout">تبریک می گویم</string>
-    <string name="msg_success_checkout">با موفقیت سفارش پرداخت را انجام داد. کد سفارش شما: %1$s سفارش شما به زودی بررسی خواهد شد. هنگامی که سفارش شما آماده است ، جزئیات فاکتور به ایمیل شما ارسال می شود.</string>
+    <string name="msg_success_checkout">سفارش با موفقیت ثبت شد! کدپیگیری شما: %1$s سفارش شما به زودی پردازش خواهد شد. هنگامی که سفارش شما آماده ارسال شود، پیامی با این عنوان برای شما ارسال میشود</string>
     <string name="process_checkout">ثبت سفارش</string>
     <string name="processed">پردازش شد</string>
     <string name="waiting">درحال پردازش</string>
@@ -134,19 +134,19 @@
     <string name="title_notif">پیام جدید</string>
 
     <!--All data ActivityFullScreenImage.java -->
-    <string name="image_of">%1$d - %2$d</string>
+    <string name="image_of">%2$d - %1$d</string>
 
     <!--All data related about page-->
     <!--Size three array below must be same -->
     <string-array name="about_title_array">
-        <item>خوش آمدید</item>
-        <item>محصولات متنوع</item>
+        <item>سلام عزیزم</item>
+        <item>خیال آسوده برای من و شماست</item>
         <item>راحت خرید کنید</item>
         <item>سریع دریافت کنید</item>
     </string-array>
 
     <string-array name="about_description_array">
-        <item>توضیح ۱</item>
+        <item>اینجا محل دیدار</item>
         <item>توضیح ۲</item>
         <item>توضیح ۳</item>
         <item>توضیح ۴</item>
@@ -183,7 +183,7 @@
         \n\nMauris ultricies augue sit amet est sollicitudin laoreet. Fusce ut congue felis. Fusce dictum tristique elit nec iaculis. Mauris sodales tempus fringilla. Fusce nec nunc tempus, tempor sapien sit amet, ultricies erat. Mauris ultrices ac lorem ultrices facilisis. Nam pharetra, nisi a imperdiet interdum, nunc justo ultricies nisl, a laoreet massa dui vel enim. Pellentesque et magna ac tellus ullamcorper malesuada a ac nisl. Curabitur id est et neque convallis accumsan. Aliquam eleifend varius massa. Curabitur eu finibus tortor.
         \n\nVivamus aliquam nisl rutrum orci volutpat porta in ornare est. Quisque ligula ipsum, vulputate id aliquam vitae, semper vitae orci. Nam non pulvinar ligula, eget tincidunt ante. Quisque sapien massa, varius tempus pretium id, vehicula at magna. Ut ut ultrices augue. Nam nec ullamcorper tellus, at finibus lectus. Fusce vel iaculis mauris, id porta nulla. Aenean ac mollis sapien. Morbi imperdiet augue tempus nulla luctus, sit amet feugiat purus elementum.
     </string>
-    <string name="version_unknown">نا مشخص</string>
+    <string name="version_unknown">نسخه نامشخص</string>
 
     <!-- Sort By Label -->
     <string name="sort_new_old">جدیدترین</string>
@@ -201,7 +201,7 @@
     <string name="title_delete_confirm">حذف</string>
     <string name="content_delete_confirm">مطمئن هستید که می خواهید همه را حذف کنید</string>
     <string name="delete_success">حذف شد</string>
-    <string name="msg_copied_clipboard">متن در کلیپ بورد کپی شد</string>
+    <string name="msg_copied_clipboard">کپی شد</string>
     <string name="failed">ناموفق</string>
 
     <string name="OK">باشه</string>
@@ -219,7 +219,7 @@
     <string name="DETAILS">جزئیات</string>
     <string name="FAILED">ناموفق</string>
     <string name="TYPE_SEARCH">جستجو</string>
-    <string name="NO_IMAGE">عکس وجود ندارد</string>
+    <string name="NO_IMAGE">عکسی وجود ندارد</string>
     <string name="DELETE">حذف</string>
     <string name="OPEN">باز کردن</string>
     <string name="SAVE">ذخیره</string>

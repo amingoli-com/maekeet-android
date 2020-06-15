@@ -435,7 +435,7 @@ public class ActivityCheckout extends AppCompatActivity {
         };
 
         int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
-        if (hour<11){
+        if (hour<9){
             day = new String[]{
                     getString(R.string.today) +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[0])
                             +" "+ getString(R.string.between_9_13),
@@ -446,7 +446,7 @@ public class ActivityCheckout extends AppCompatActivity {
                     getString(R.string.tomorrow)  +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[3])
                             +" "+ getString(R.string.between_16_21)
             };
-        }else if (hour >= 10 && hour<20){
+        }else if (hour < 20){
             day = new String[]{
                     getString(R.string.today) +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[1])
                             +" "+ getString(R.string.between_16_21),
