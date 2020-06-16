@@ -1,9 +1,11 @@
 package com.app.markeet;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import com.google.android.material.snackbar.Snackbar;
@@ -17,6 +19,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -170,11 +173,29 @@ public class ActivityNewsInfoDetails extends AppCompatActivity {
         });
     }
 
+    @SuppressLint({"ClickableViewAccessibility", "SetJavaScriptEnabled"})
     private void displayPostData() {
         ((TextView) findViewById(R.id.title)).setText(Html.fromHtml(newsInfo.title));
 
         webview = (WebView) findViewById(R.id.content);
-        String html_data = "<style>img{max-width:100%;height:auto;} iframe{width:100%;}</style> ";
+        String html_data = "<style>" +
+                "@font-face {\n" +
+                "    font-family: 'IRANSans';\n" +
+                "    src: url('http://amingoli.com/markeet/lib/css/fonts/IRANSansWeb_Medium.eot'); /* IE9 Compat Modes */\n" +
+                "    src: url('http://amingoli.com/markeet/lib/css/fonts/IRANSansWeb_Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */\n" +
+                "    url('http://amingoli.com/markeet/lib/css/fonts/IRANSansWeb_Medium.woff2') format('woff2'), /* Super Modern Browsers */\n" +
+                "    url('http://amingoli.com/markeet/lib/css/fonts/IRANSansWeb_Medium.woff') format('woff'), /* Pretty Modern Browsers */\n" +
+                "    url('http://amingoli.com/markeet/lib/css/fonts/IRANSansWeb_Medium.ttf')  format('truetype'); /* Safari, Android, iOS */\n" +
+                "}\n" +
+                "body{\n" +
+                "    font-family: IRANSans;\n" +
+                "    font-size: medium;\n" +
+                "    text-align: justify;\n" +
+                "    direction: rtl;"+
+                "}" +
+                "img{max-width:100%;height:auto;}" +
+                "iframe{width:100%;}"+
+                "</style> ";
         html_data += newsInfo.full_content;
         webview.getSettings().setJavaScriptEnabled(true);
         webview.getSettings();
