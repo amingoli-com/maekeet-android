@@ -114,7 +114,7 @@ public class ActivityNotification extends AppCompatActivity {
     public void dialogDeleteConfirmation() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.title_delete_confirm);
-        builder.setMessage(getString(R.string.content_delete_confirm) + getString(R.string.title_activity_notifications));
+        builder.setMessage(getString(R.string.content_delete_confirm));
         builder.setPositiveButton(R.string.YES, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface di, int i) {
