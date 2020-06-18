@@ -25,7 +25,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.app.markeet.adapter.AdapterShoppingCart;
 import com.app.markeet.data.DatabaseHandler;
@@ -113,7 +112,7 @@ public class ActivityShoppingCart extends AppCompatActivity {
             Intent intent = new Intent(ActivityShoppingCart.this, ActivityCheckout.class);
             startActivity(intent);
         }else if (getTotalPrice() < AppConfig.MINIMUM_CART_FOR_SEND && adapter.getItemCount() > 0 ){
-            Snackbar.make(parent_view, R.string.mimimum_cart_for_send, Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(parent_view, R.string.minimum_cart_for_send, Snackbar.LENGTH_SHORT).show();
         }else {
             Snackbar.make(parent_view, R.string.msg_cart_empty, Snackbar.LENGTH_SHORT).show();
         }
