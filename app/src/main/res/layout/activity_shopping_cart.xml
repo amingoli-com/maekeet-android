@@ -95,7 +95,7 @@
             android:padding="@dimen/spacing_medium"
             android:text="@string/process_checkout"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:textColor="@color/colorCheckOut"
+            android:textColor="@android:color/holo_red_dark"
             android:gravity="center_horizontal" />
 
     </LinearLayout>

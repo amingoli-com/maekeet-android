@@ -22,7 +22,7 @@
     <color name="colorAddCart">#039A0B</color>
     <color name="colorRemoveCart">#666666</color>
 
-    <color name="colorCheckOut">#DF0202</color>
+    <color name="colorCheckOut">@color/colorAddCart</color>
     <color name="colorWarning">#FF7043</color>
     <color name="colorInfo">#5DBA60</color>
 
