@@ -213,16 +213,11 @@ public class ActivityCheckout extends AppCompatActivity {
                 @Override
                 public void onCallbackResultVerificationPayment(boolean isPaymentSuccess, String refID, PaymentRequest paymentRequest) {
                     if (isPaymentSuccess){
-                        comment.setText(getString(R.string.pay_online)+" - refID: "+refID + " - Authority: "+paymentRequest.getAuthority());
+                        comment.setText(getString(R.string.pay_online)+" - کدپیگیری پرداخت از درگاه زرین پال: "+refID);
                         delaySubmitOrderData();
                     }else {
                         dialogFailedRetry(refID);
                     }
-                    Log.i("TAG", "onCallbackResultVerificationPayment: "
-                            +"\n"+isPaymentSuccess
-                            +"\n"+refID
-                            +"\n"+paymentRequest.getAuthority()
-                    );
                 }
             });
         }
