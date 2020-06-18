@@ -120,8 +120,8 @@
     <string name="confirm_checkout">با چه روشی میخواهید پرداخت کنید؟</string>
     <string name="failed_checkout_online">فرآیند ثبت سفارش با شکست مواجه شد، در صورت کسر مبلغ از حساب و عدم استرداد طی ۷۲ ساعت آینده با پشتیبانی تماس حاصل فرمایید</string>
     <string name="failed_checkout">فرآیند ثبت سفارش با شکست مواجه شد، از اتصال به اینترنت اطمینان حاصل فرمایید و مجددا تلاش کنید</string>
-    <string name="success_checkout">تبریک می گویم</string>
-    <string name="msg_success_checkout">سفارش با موفقیت ثبت شد! کدپیگیری شما: %1$s سفارش شما به زودی پردازش خواهد شد. هنگامی که سفارش شما آماده ارسال شود، پیامی با این عنوان برای شما ارسال میشود</string>
+    <string name="success_checkout">سفارش با موفقیت ثبت شد!</string>
+    <string name="msg_success_checkout"> کدپیگیری شما: %1$s سفارش شما به زودی پردازش خواهد شد. هنگامی که سفارش شما آماده ارسال شود، پیامی با این عنوان برای شما ارسال میشود</string>
     <string name="process_checkout">ثبت سفارش</string>
     <string name="processed">پردازش شد</string>
     <string name="waiting">درحال پردازش</string>
