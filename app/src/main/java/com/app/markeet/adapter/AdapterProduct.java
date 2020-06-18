@@ -1,21 +1,29 @@
 package com.app.markeet.adapter;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Paint;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.app.markeet.ActivityShoppingCart;
 import com.app.markeet.R;
+import com.app.markeet.data.AppConfig;
 import com.app.markeet.data.Constant;
 import com.app.markeet.data.DatabaseHandler;
 import com.app.markeet.data.SharedPref;
@@ -31,6 +39,7 @@ import java.util.List;
 public class AdapterProduct extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private static String TAG = "adminamin";
 
+    private boolean warning = false;
     private void refreshCartButton(long product_id, MaterialRippleLayout ly, TextView tv,ImageView ic,DatabaseHandler db) {
         if (db.getCart(product_id) != null) {
             ly.setBackgroundColor(ctx.getResources().getColor(R.color.colorRemoveCart));
@@ -171,8 +180,77 @@ public class AdapterProduct extends RecyclerView.Adapter<RecyclerView.ViewHolder
                             return;
                         }
                         Double selected_price = p.price_discount > 0 ? p.price_discount : p.price;
-                        Cart cart = new Cart(p.id, p.name, p.image, 1, p.stock, selected_price, System.currentTimeMillis());
-                        vItem.db.saveCart(cart);
+                        final Cart cart = new Cart(p.id, p.name, p.image, 1, p.stock, selected_price, System.currentTimeMillis());
+//                        vItem.db.saveCart(cart);
+
+                        final Dialog dialog = new Dialog(ctx);
+                        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // before
+                        dialog.setContentView(R.layout.dialog_cart_option);
+
+                        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+                        lp.copyFrom(dialog.getWindow().getAttributes());
+                        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+                        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                        ((TextView) dialog.findViewById(R.id.title)).setText(p.name);
+                        ((TextView) dialog.findViewById(R.id.stock)).setText(ctx.getString(R.string.stock) + p.stock);
+                        final TextView qty = (TextView) dialog.findViewById(R.id.quantity);
+                        qty.setText(cart.amount + "");
+
+                        ((ImageView) dialog.findViewById(R.id.img_decrease)).setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                if (cart.amount > 1) {
+                                    cart.amount = cart.amount - 1;
+                                    qty.setText(cart.amount + "");
+                                }
+                            }
+                        });
+                        ((ImageView) dialog.findViewById(R.id.img_increase)).setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                if (cart.amount < p.stock && cart.amount < AppConfig.TOTAL_AMOUNT) {
+                                    cart.amount = cart.amount + 1;
+                                    qty.setText(cart.amount + "");
+                                }else {
+
+                                    if (!warning){
+                                        warning = true;
+                                        qty.setTextColor(Color.RED);
+                                        new Handler().postDelayed(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                qty.setTextColor(Color.BLACK);
+                                                warning = false;
+                                            }
+                                        },200);
+                                    }
+                                }
+                            }
+                        });
+                        ((Button) dialog.findViewById(R.id.bt_save)).setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                vItem.db.saveCart(cart);
+                                try {
+                                    refreshCartButton(p.id,vItem.lyt_add_cart,vItem.tv_add_cart,vItem.ic_add_cart,vItem.db);
+                                    mOnItemClickListener.updateBadge();
+                                }catch (Exception e){
+                                    Log.e(TAG, "onClick: ",e );
+                                }
+                                dialog.dismiss();
+                            }
+                        });
+                        ((Button) dialog.findViewById(R.id.bt_remove)).setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                if (vItem.db.getCart(p.id) != null) {
+                                    vItem.db.deleteActiveCart(p.id);
+                                }
+                                dialog.dismiss();
+                            }
+                        });
+                        dialog.show();
+                        dialog.getWindow().setAttributes(lp);
 //                        Toast.makeText(ctx, R.string.add_cart, Toast.LENGTH_SHORT).show();
                     }
                     refreshCartButton(p.id,vItem.lyt_add_cart,vItem.tv_add_cart,vItem.ic_add_cart,vItem.db);
