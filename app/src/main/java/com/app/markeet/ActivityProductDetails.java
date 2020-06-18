@@ -219,7 +219,15 @@ public class ActivityProductDetails extends AppCompatActivity {
             ((TextView) findViewById(R.id.title)).setText(Html.fromHtml(product.name));
 
             webview = (WebView) findViewById(R.id.content);
-            String html_data = "<style>img{max-width:100%;height:auto;} iframe{width:100%;}</style> ";
+            String html_data = "<style>" +
+                    "body{\n" +
+                    "font-size: medium;\n" +
+                    "text-align: justify;\n" +
+                    "direction: rtl;"+
+                    "}" +
+                    "img{max-width:100%;height:auto;}" +
+                    "iframe{width:100%;}"+
+                    "</style> ";
             html_data += product.description;
             webview.getSettings().setJavaScriptEnabled(true);
             webview.getSettings().setBuiltInZoomControls(true);

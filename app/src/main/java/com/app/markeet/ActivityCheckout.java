@@ -1,5 +1,6 @@
 package com.app.markeet;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -8,9 +9,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.app.markeet.utils.FaNum;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 import androidx.appcompat.app.ActionBar;
@@ -32,6 +35,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.markeet.adapter.AdapterShoppingCart;
 import com.app.markeet.connection.API;
@@ -50,7 +54,12 @@ import com.app.markeet.utils.CallbackDialog;
 import com.app.markeet.utils.DialogUtils;
 import com.app.markeet.utils.Tools;
 import com.balysv.materialripple.MaterialRippleLayout;
+import com.zarinpal.ewallets.purchase.OnCallbackRequestPaymentListener;
+import com.zarinpal.ewallets.purchase.OnCallbackVerificationPaymentListener;
+import com.zarinpal.ewallets.purchase.PaymentRequest;
+import com.zarinpal.ewallets.purchase.ZarinPal;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -198,6 +207,25 @@ public class ActivityCheckout extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         displayData();
+        if (getIntent().getData() != null) {
+            ZarinPal.getPurchase(this).verificationPayment(getIntent().getData(), new OnCallbackVerificationPaymentListener() {
+                @SuppressLint("SetTextI18n")
+                @Override
+                public void onCallbackResultVerificationPayment(boolean isPaymentSuccess, String refID, PaymentRequest paymentRequest) {
+                    if (isPaymentSuccess){
+                        comment.setText(getString(R.string.pay_online)+" - refID: "+refID + " - Authority: "+paymentRequest.getAuthority());
+                        delaySubmitOrderData();
+                    }else {
+                        dialogFailedRetry(refID);
+                    }
+                    Log.i("TAG", "onCallbackResultVerificationPayment: "
+                            +"\n"+isPaymentSuccess
+                            +"\n"+refID
+                            +"\n"+paymentRequest.getAuthority()
+                    );
+                }
+            });
+        }
     }
 
     private void displayData() {
@@ -342,16 +370,48 @@ public class ActivityCheckout extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.confirmation);
         builder.setMessage(getString(R.string.confirm_checkout));
-        builder.setPositiveButton(R.string.YES, new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.pay_at_home, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                comment.setText(getString(R.string.pay_at_home));
                 delaySubmitOrderData();
             }
         });
-        builder.setNegativeButton(R.string.NO, null);
+        builder.setNegativeButton(R.string.pay_online, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                zarinPalPayment();
+            }
+        });
         builder.show();
     }
 
+    public void dialogFailedRetry(String refID) {
+        String massage = getString(R.string.failed_checkout_online);
+        if (refID != null){
+            massage += " "+getString(R.string.your_code_online_payment)+refID;
+        }
+        progressDialog.dismiss();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.failed);
+        builder.setMessage(massage);
+        builder.setPositiveButton(R.string.TRY_AGAIN, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogConfirmCheckout();
+            }
+        });
+        builder.setNegativeButton(R.string.pref_title_contact_us, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+//                startActivity(new Intent(getApplicationContext(), ActivitySettings.class));
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse(getString(R.string.developer_phone_intent)));
+                startActivity(intent);
+            }
+        });
+        builder.show();
+    }
     public void dialogFailedRetry() {
         progressDialog.dismiss();
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -360,13 +420,16 @@ public class ActivityCheckout extends AppCompatActivity {
         builder.setPositiveButton(R.string.TRY_AGAIN, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                delaySubmitOrderData();
+                dialogConfirmCheckout();
             }
         });
-        builder.setNegativeButton(R.string.SETTING, new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(R.string.pref_title_contact_us, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                startActivity(new Intent(getApplicationContext(), ActivitySettings.class));
+//                startActivity(new Intent(getApplicationContext(), ActivitySettings.class));
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse(getString(R.string.developer_phone_intent)));
+                startActivity(intent);
             }
         });
         builder.show();
@@ -609,4 +672,30 @@ public class ActivityCheckout extends AppCompatActivity {
             }
         }
     }
+
+    private void zarinPalPayment() {
+        ZarinPal purchase = ZarinPal.getPurchase(this);
+        PaymentRequest payment = ZarinPal.getPaymentRequest();
+        /*Get Merchant Id from Zarin pal*/
+        payment.setMerchantID("e5066952-b110-11ea-98c8-000c295eb8fc");
+        /*The price with toman = 100 toman not rial */
+        payment.setAmount(FaNum.convertToEN(_total_fees_str));
+
+        /*Desc For : Why should pay ?*/
+        payment.setDescription("پرداخت جهت خرید ");
+        payment.setCallbackURL("return://zarinpalpayment");
+
+        /*Create the request*/
+        purchase.startPayment(payment, new OnCallbackRequestPaymentListener() {
+            @Override
+            public void onCallbackResultPaymentRequest(int status, String authority, Uri paymentGatewayUri, Intent intent) {
+                if (status == 100) {
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(ActivityCheckout.this, "خطا در ایجاد درخواست پرداخت", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
 }

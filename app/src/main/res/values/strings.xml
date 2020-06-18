@@ -115,10 +115,11 @@
     <string name="invalid_comment">توضیحات نامعتبر است</string>
 
     <string name="title_please_wait">صبر کنید</string>
-    <string name="content_submit_checkout">تسویه حساب &#8230;</string>
+    <string name="content_submit_checkout">درحال ثبت سفارش &#8230;</string>
     <string name="confirmation">تایید سفارش</string>
-    <string name="confirm_checkout">مطمئن هستید که می خواهید این سفارش را ثبت کنید؟</string>
-    <string name="failed_checkout">هنگام ثبت سفارش مشکلی پیش آمد! اطمینان حاصل کنید که ارتباط اینترنتی دارید یا در صورت نیاز با پشتیبانی تماس بگیرید</string>
+    <string name="confirm_checkout">با چه روشی میخواهید پرداخت کنید؟</string>
+    <string name="failed_checkout_online">فرآیند ثبت سفارش با شکست مواجه شد، در صورت کسر مبلغ از حساب و عدم استرداد طی ۷۲ ساعت آینده با پشتیبانی تماس حاصل فرمایید</string>
+    <string name="failed_checkout">فرآیند ثبت سفارش با شکست مواجه شد، از اتصال به اینترنت اطمینان حاصل فرمایید و مجددا تلاش کنید</string>
     <string name="success_checkout">تبریک می گویم</string>
     <string name="msg_success_checkout">سفارش با موفقیت ثبت شد! کدپیگیری شما: %1$s سفارش شما به زودی پردازش خواهد شد. هنگامی که سفارش شما آماده ارسال شود، پیامی با این عنوان برای شما ارسال میشود</string>
     <string name="process_checkout">ثبت سفارش</string>
@@ -202,7 +203,7 @@
     <string name="content_delete_confirm">مطمئن هستید که می خواهید همه را حذف کنید</string>
     <string name="delete_success">حذف شد</string>
     <string name="msg_copied_clipboard">کپی شد</string>
-    <string name="failed">ناموفق</string>
+    <string name="failed">عملیات ناموفق</string>
 
     <string name="OK">باشه</string>
     <string name="GOT_IT">فهمیدم</string>
@@ -215,7 +216,7 @@
     <string name="DISMISS">رد کردن</string>
     <string name="HIDE">مخفی کردن</string>
     <string name="RETRY">تلاش مجدد</string>
-    <string name="TRY_AGAIN">سعی مجدد</string>
+    <string name="TRY_AGAIN">تلاش مجدد</string>
     <string name="DETAILS">جزئیات</string>
     <string name="FAILED">ناموفق</string>
     <string name="TYPE_SEARCH">جستجو</string>
@@ -234,5 +235,8 @@
     <string name="order_code">کد پیگیری : &#160;</string>
     <string name="maximum_inventory">امکان اضافه کردن وجود ندارد</string>
     <string name="desc_shopping_cart">با لمس بر روی محصولات تعداد آنها را مشخص کنید</string>
+    <string name="pay_online">پرداخت آنلاین</string>
+    <string name="pay_at_home">پرداخت درب منزل</string>
+    <string name="your_code_online_payment">کد پیگیری شما: </string>
 
 </resources>

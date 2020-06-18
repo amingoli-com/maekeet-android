@@ -47,7 +47,14 @@
         <activity android:name=".ActivityNotification" />
         <activity android:name=".ActivityWishlist" />
         <activity android:name=".ActivityShoppingCart" />
-        <activity android:name=".ActivityCheckout" />
+        <activity android:name=".ActivityCheckout">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="return" android:host="zarinpalpayment"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".ActivityOrderHistory" />
         <activity
             android:name=".ActivityDialogNotification"
