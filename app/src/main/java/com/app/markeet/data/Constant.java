@@ -11,8 +11,8 @@ public class Constant {
 
     /* [ IMPORTANT ] be careful when edit this security code */
     /* This string must be same with security code at Server, if its different android unable to submit order */
-    public static final String SECURITY_CODE = "YOUR_SECURITY_CODE";
-    public static final String ZARINPAL_MERCHANT_ID = "MERCHANT_ID";
+    public static final String SECURITY_CODE = SecurityCodeValue.SECURITY_CODE;
+    public static final String ZARINPAL_MERCHANT_ID = SecurityCodeValue.ZARINPAL_MERCHANT_ID;
 
 
     /**
