@@ -13,6 +13,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.app.markeet.data.Constant;
 import com.app.markeet.utils.FaNum;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
@@ -672,12 +673,13 @@ public class ActivityCheckout extends AppCompatActivity {
         ZarinPal purchase = ZarinPal.getPurchase(this);
         PaymentRequest payment = ZarinPal.getPaymentRequest();
         /*Get Merchant Id from Zarin pal*/
-        payment.setMerchantID("e5066952-b110-11ea-98c8-000c295eb8fc");
+        payment.setMerchantID(Constant.ZARINPAL_MERCHANT_ID);
         /*The price with toman = 100 toman not rial */
         payment.setAmount(FaNum.convertToEN(_total_fees_str));
 
         /*Desc For : Why should pay ?*/
         payment.setDescription("پرداخت جهت خرید ");
+        payment.setMobile(phone.getText().toString());
         payment.setCallbackURL("return://zarinpalpayment");
 
         /*Create the request*/
