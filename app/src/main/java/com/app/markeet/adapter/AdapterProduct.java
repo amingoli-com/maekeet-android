@@ -21,6 +21,7 @@ import com.app.markeet.data.DatabaseHandler;
 import com.app.markeet.data.SharedPref;
 import com.app.markeet.model.Cart;
 import com.app.markeet.model.Product;
+import com.app.markeet.utils.FaNum;
 import com.app.markeet.utils.Tools;
 import com.balysv.materialripple.MaterialRippleLayout;
 
@@ -129,7 +130,7 @@ public class AdapterProduct extends RecyclerView.Adapter<RecyclerView.ViewHolder
         if (holder instanceof OriginalViewHolder) {
             final Product p = items.get(position);
             final OriginalViewHolder vItem = (OriginalViewHolder) holder;
-            vItem.name.setText(p.name);
+            vItem.name.setText(FaNum.convert(p.name));
 
             // handle discount view
             if (p.price_discount > 0) {

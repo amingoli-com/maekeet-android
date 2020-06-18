@@ -88,7 +88,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_small"
-                        android:maxLines="2"
+                        android:maxLines="4"
                         android:minLines="2"
                         android:text="Apple Iphone 5s 16gb Gold Gsm Garansi 1 Tahun"
                         android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
