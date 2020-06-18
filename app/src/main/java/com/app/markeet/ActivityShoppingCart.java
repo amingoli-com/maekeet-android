@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 import com.app.markeet.data.AppConfig;
+import com.app.markeet.utils.FaNum;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
@@ -108,10 +109,12 @@ public class ActivityShoppingCart extends AppCompatActivity {
     }
 
     private void goToActivityCheckOut(){
-        if (adapter.getItemCount() > 0) {
+        if (adapter.getItemCount() > 0 && getTotalPrice() >= AppConfig.MINIMUM_CART_FOR_SEND) {
             Intent intent = new Intent(ActivityShoppingCart.this, ActivityCheckout.class);
             startActivity(intent);
-        } else {
+        }else if (getTotalPrice() < AppConfig.MINIMUM_CART_FOR_SEND){
+            Snackbar.make(parent_view, R.string.mimimum_cart_for_send, Snackbar.LENGTH_SHORT).show();
+        }else {
             Snackbar.make(parent_view, R.string.msg_cart_empty, Snackbar.LENGTH_SHORT).show();
         }
 
@@ -158,6 +161,17 @@ public class ActivityShoppingCart extends AppCompatActivity {
         }
         _price_total_tax_str = Tools.getFormattedPrice(_price_total, this);
         price_total.setText(" " + _price_total_tax_str);
+    }
+
+    private int getTotalPrice() {
+        List<Cart> items = adapter.getItem();
+        Double _price_total = 0D;
+        String _price_total_tax_str;
+        for (Cart c : items) {
+            _price_total = _price_total + (c.amount * c.price_item);
+        }
+        _price_total_tax_str = Tools.getFormattedPrice(_price_total, this);
+        return FaNum.convertToEN(_price_total_tax_str);
     }
 
     private void dialogCartAction(final Cart model) {

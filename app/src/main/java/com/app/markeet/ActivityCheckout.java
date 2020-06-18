@@ -410,7 +410,7 @@ public class ActivityCheckout extends AppCompatActivity {
     }
     public void dialogFailedRetry() {
         progressDialog.dismiss();
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.failed);
         builder.setMessage(getString(R.string.failed_checkout));
         builder.setPositiveButton(R.string.TRY_AGAIN, new DialogInterface.OnClickListener() {
