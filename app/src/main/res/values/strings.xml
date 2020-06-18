@@ -238,5 +238,6 @@
     <string name="pay_online">پرداخت آنلاین</string>
     <string name="pay_at_home">پرداخت درب منزل</string>
     <string name="your_code_online_payment">کد پیگیری شما: </string>
+    <string name="zarinpal_status_failed">خطا در ایجاد درخواست پرداخت</string>
 
 </resources>

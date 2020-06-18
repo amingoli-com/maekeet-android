@@ -685,11 +685,14 @@ public class ActivityCheckout extends AppCompatActivity {
         /*Create the request*/
         purchase.startPayment(payment, new OnCallbackRequestPaymentListener() {
             @Override
-            public void onCallbackResultPaymentRequest(int status, String authority, Uri paymentGatewayUri, Intent intent) {
+            public void onCallbackResultPaymentRequest(int status, String authority,
+                                                       Uri paymentGatewayUri, Intent intent) {
                 if (status == 100) {
                     startActivity(intent);
                 } else {
-                    Toast.makeText(ActivityCheckout.this, "خطا در ایجاد درخواست پرداخت", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ActivityCheckout.this,
+                            getString(R.string.zarinpal_status_failed),
+                            Toast.LENGTH_SHORT).show();
                 }
             }
         });
