@@ -96,11 +96,7 @@ public class ActivityShoppingCart extends AppCompatActivity {
         if (item_id == android.R.id.home) {
             super.onBackPressed();
         } else if (item_id == R.id.action_checkout) {
-            if (adapter.getItemCount() > 0) {
-                goToActivityCheckOut();
-            } else {
-                Snackbar.make(parent_view, R.string.msg_cart_empty, Snackbar.LENGTH_SHORT).show();
-            }
+            goToActivityCheckOut();
         } else if (item_id == R.id.action_delete) {
             if (adapter.getItemCount() == 0) {
                 Snackbar.make(parent_view, R.string.msg_cart_empty, Snackbar.LENGTH_SHORT).show();
@@ -112,8 +108,13 @@ public class ActivityShoppingCart extends AppCompatActivity {
     }
 
     private void goToActivityCheckOut(){
-        Intent intent = new Intent(ActivityShoppingCart.this, ActivityCheckout.class);
-        startActivity(intent);
+        if (adapter.getItemCount() > 0) {
+            Intent intent = new Intent(ActivityShoppingCart.this, ActivityCheckout.class);
+            startActivity(intent);
+        } else {
+            Snackbar.make(parent_view, R.string.msg_cart_empty, Snackbar.LENGTH_SHORT).show();
+        }
+
     }
 
     @Override
