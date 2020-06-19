@@ -7,8 +7,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -31,7 +29,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
@@ -60,12 +57,9 @@ import com.zarinpal.ewallets.purchase.OnCallbackVerificationPaymentListener;
 import com.zarinpal.ewallets.purchase.PaymentRequest;
 import com.zarinpal.ewallets.purchase.ZarinPal;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -96,6 +90,7 @@ public class ActivityCheckout extends AppCompatActivity {
     private Call<CallbackOrder> callbackCall = null;
     // construct dialog progress
     ProgressDialog progressDialog = null;
+    private Long g = 0L;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -221,6 +216,8 @@ public class ActivityCheckout extends AppCompatActivity {
                     }
                 }
             });
+        }else {
+            saveValueBuyerProfile(false);
         }
     }
 
@@ -235,6 +232,12 @@ public class ActivityCheckout extends AppCompatActivity {
 //            email.setText(buyerProfile.email);
             phone.setText(buyerProfile.phone);
             address.setText(buyerProfile.address);
+            if (buyerProfile.send_date != null){
+                date_shipping = (TextView) findViewById(R.id.date_shipping);
+                date_ship_millis = buyerProfile.send_date;
+                date_shipping.setText(Tools.getFormattedDate(date_ship_millis));
+                shipping.setSelection(buyerProfile.send_by);
+            }
         }
         email.setText("buyer@amingoli.com");
     }
@@ -287,12 +290,7 @@ public class ActivityCheckout extends AppCompatActivity {
             return;
         }
 
-        buyerProfile = new BuyerProfile();
-        buyerProfile.name = buyer_name.getText().toString();
-        buyerProfile.email = email.getText().toString();
-        buyerProfile.phone = phone.getText().toString();
-        buyerProfile.address = address.getText().toString();
-        sharedPref.setBuyerProfile(buyerProfile);
+        saveValueBuyerProfile(false);
 
         // hide keyboard
         hideKeyboard();
@@ -336,7 +334,6 @@ public class ActivityCheckout extends AppCompatActivity {
                 } else {
                     dialogFailedRetry();
                 }
-
             }
 
             @Override
@@ -432,6 +429,7 @@ public class ActivityCheckout extends AppCompatActivity {
     }
 
     public void dialogSuccess(String code) {
+        saveValueBuyerProfile(false);
         progressDialog.dismiss();
         Dialog dialog = new DialogUtils(this).buildDialogInfo(
                 getString(R.string.success_checkout),
@@ -688,6 +686,7 @@ public class ActivityCheckout extends AppCompatActivity {
             public void onCallbackResultPaymentRequest(int status, String authority,
                                                        Uri paymentGatewayUri, Intent intent) {
                 if (status == 100) {
+                    saveValueBuyerProfile(true);
                     startActivity(intent);
                 } else {
                     Toast.makeText(ActivityCheckout.this,
@@ -696,6 +695,23 @@ public class ActivityCheckout extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void saveValueBuyerProfile(boolean save_shipping_and_date){
+        Long sendDate = null;
+        int sendBy = 0;
+        buyerProfile = new BuyerProfile();
+        buyerProfile.name = buyer_name.getText().toString();
+        buyerProfile.email = email.getText().toString();
+        buyerProfile.phone = phone.getText().toString();
+        buyerProfile.address = address.getText().toString();
+        if (save_shipping_and_date){
+            sendBy = shipping.getSelectedItemPosition();
+            sendDate = date_ship_millis;
+        }
+        buyerProfile.send_by = sendBy;
+        buyerProfile.send_date = sendDate;
+        sharedPref.setBuyerProfile(buyerProfile);
     }
 
 }
