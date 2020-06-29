@@ -256,7 +256,7 @@ public class Tools {
     public static String getFormattedPrice(Double price, Context ctx) {
         SharedPref sharedPref = new SharedPref(ctx);
         NumberFormat format = NumberFormat.getInstance(AppConfig.PRICE_LOCAL_FORMAT);
-        String result = FaNum.convert(format.format(price));
+        String result = format.format(price);
 
         if (!AppConfig.PRICE_WITH_DECIMAL) {
 //            result = format.format(price.longValue());
@@ -269,7 +269,12 @@ public class Tools {
         } else {
             result = sharedPref.getInfoData().currency + " " + result;
         }
-        return result;
+        return FaNum.convert(result);
+    }
+
+    public static String getFormattedPrice(int price, Context ctx) {
+        Double d = Double.parseDouble(String.valueOf(price));
+        return getFormattedPrice(d,ctx);
     }
 
     public static String getDeviceID(Context context) {

@@ -1,5 +1,6 @@
 package com.app.markeet;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Handler;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -107,12 +109,16 @@ public class ActivityShoppingCart extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @SuppressLint("StringFormatMatches")
     private void goToActivityCheckOut(){
         if (adapter.getItemCount() > 0 && getTotalPrice() >= AppConfig.MINIMUM_CART_FOR_SEND) {
             Intent intent = new Intent(ActivityShoppingCart.this, ActivityCheckout.class);
             startActivity(intent);
         }else if (getTotalPrice() < AppConfig.MINIMUM_CART_FOR_SEND && adapter.getItemCount() > 0 ){
-            Snackbar.make(parent_view, R.string.minimum_cart_for_send, Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(parent_view,
+                    getString(R.string.minimum_cart_for_send,
+                            Tools.getFormattedPrice(AppConfig.MINIMUM_CART_FOR_SEND,this))
+                    , Snackbar.LENGTH_SHORT).show();
         }else {
             Snackbar.make(parent_view, R.string.msg_cart_empty, Snackbar.LENGTH_SHORT).show();
         }
