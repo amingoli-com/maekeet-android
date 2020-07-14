@@ -370,12 +370,12 @@ public class ActivityCheckout extends AppCompatActivity {
                 delaySubmitOrderData();
             }
         });
-        builder.setNegativeButton(R.string.pay_online, new DialogInterface.OnClickListener() {
+        /*builder.setNegativeButton(R.string.pay_online, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 zarinPalPayment();
             }
-        });
+        });*/
         builder.show();
     }
 
