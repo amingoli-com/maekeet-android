@@ -36,6 +36,6 @@ public class AppConfig {
 
     // in ActivityShoppingCart in dialogCartAction() Method
     public static final int TOTAL_AMOUNT = 20;
-    public static final int MINIMUM_CART_FOR_SEND = 12345;
+    public static final int MINIMUM_CART_FOR_SEND = 30000;
 
 }
