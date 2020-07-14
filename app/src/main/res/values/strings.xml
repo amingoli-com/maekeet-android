@@ -140,17 +140,17 @@
     <!--All data related about page-->
     <!--Size three array below must be same -->
     <string-array name="about_title_array">
-        <item>سلام عزیزم</item>
-        <item>خیال آسوده برای من و شماست</item>
+        <item>سلام</item>
         <item>راحت خرید کنید</item>
         <item>سریع دریافت کنید</item>
+        <item>به همین راحتی</item>
     </string-array>
 
     <string-array name="about_description_array">
-        <item>اینجا محل دیدار</item>
-        <item>توضیح ۲</item>
-        <item>توضیح ۳</item>
-        <item>توضیح ۴</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
     </string-array>
 
     <integer-array name="about_images_array">
