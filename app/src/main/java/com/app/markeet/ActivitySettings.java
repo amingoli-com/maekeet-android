@@ -60,11 +60,35 @@ public class ActivitySettings extends PreferenceActivity {
             notifPref.setEnabled(false);
         }
 
-        final Preference prefTerm = (Preference) findPreference(getString(R.string.pref_title_term));
-        prefTerm.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+        final Preference prefTerm_1 = (Preference) findPreference(getString(R.string.pref_title_term_1));
+        prefTerm_1.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-                dialogTerm();
+                dialogTerm(1);
+                return false;
+            }
+        });
+        final Preference prefTerm_2 = (Preference) findPreference(getString(R.string.pref_title_term_2));
+        prefTerm_2.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                dialogTerm(2);
+                return false;
+            }
+        });
+        final Preference prefTerm_3 = (Preference) findPreference(getString(R.string.pref_title_term_3));
+        prefTerm_3.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                dialogTerm(3);
+                return false;
+            }
+        });
+        final Preference prefTerm_4 = (Preference) findPreference(getString(R.string.pref_title_term_4));
+        prefTerm_4.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                dialogTerm(4);
                 return false;
             }
         });
@@ -90,8 +114,22 @@ public class ActivitySettings extends PreferenceActivity {
         initToolbar();
     }
 
-    public void dialogTerm() {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constant.getUrlTerm()));
+    public void dialogTerm(int i) {
+        Intent intent;
+        switch (i){
+            case 1:
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constant.getUrlTerm_1));
+                break;
+            case 2:
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constant.getUrlTerm_2));
+                break;
+            case 3:
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constant.getUrlTerm_3));
+                break;
+            default:
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constant.getUrlTerm_4));
+                break;
+        }
         startActivity(intent);
     }
 

@@ -41,8 +41,11 @@ public class Constant {
         return WEB_URL + "uploads/category/" + file_name;
     }
 
-    public static String getUrlTerm() {
-        return WEB_URL + "term";
-    }
+    private static String TERM = WEB_URL + "term/";
+    private static String format = ".html";
+    public static String getUrlTerm_1 = TERM + "1" + format;
+    public static String getUrlTerm_2 = TERM + "2" + format;
+    public static String getUrlTerm_3 = TERM + "3" + format;
+    public static String getUrlTerm_4 = TERM + "4" + format;
 
 }

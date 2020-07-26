@@ -24,7 +24,22 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/pref_group_others">
+    <PreferenceCategory android:title="@string/pref_group_term">
+        <Preference
+            android:key="@string/pref_title_term_1"
+            android:title="@string/pref_title_term_1" />
+        <Preference
+            android:key="@string/pref_title_term_2"
+            android:title="@string/pref_title_term_2" />
+        <Preference
+            android:key="@string/pref_title_term_3"
+            android:title="@string/pref_title_term_3" />
+        <Preference
+            android:key="@string/pref_title_term_4"
+            android:title="@string/pref_title_term_4" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_group_app_info">
         <Preference
             android:key="@string/pref_title_contact_us"
             android:summary="@string/developer_phone"
@@ -36,9 +51,6 @@
             android:key="@string/pref_title_build"
             android:summary="@string/app_version"
             android:title="@string/pref_title_build" />
-        <Preference
-            android:key="@string/pref_title_term"
-            android:title="@string/pref_title_term" />
     </PreferenceCategory>
 
 </PreferenceScreen>

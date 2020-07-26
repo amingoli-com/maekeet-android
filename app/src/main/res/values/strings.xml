@@ -164,17 +164,21 @@
     <string name="app_version">نسخه</string>
     <string name="developer_phone">۰۹۱۰۰۵۳۰۵۹۳</string>
     <string name="developer_phone_intent">tel:09100530593</string>
-    <string name="copyright">® تمام حقوق برای مارکت محفوظ است ©</string>
+    <string name="copyright">® تمامی حقوق برای مارکت محفوظ است ©</string>
 
     <string name="pref_group_notif">پیام ها</string>
-    <string name="pref_group_others">موارد دیگر</string>
+    <string name="pref_group_term">قوانین و تعهدات</string>
+    <string name="pref_group_app_info">پشتیبانی</string>
     <string name="pref_title_notif">نمایش پیام جدید</string>
     <string name="pref_title_ringtone">صدای اعلان پیام</string>
     <string name="pref_title_vibrate">ویبره</string>
     <string name="pref_title_copyright">حقوق توسعه‌دهنده</string>
     <string name="pref_title_contact_us">تماس با پشتیبانی</string>
     <string name="pref_title_build">نسخه و شماره برنامه</string>
-    <string name="pref_title_term">شرایط استفاده و حریم‌خصوصی</string>
+    <string name="pref_title_term_1">قوانین و شرایط استفاده</string>
+    <string name="pref_title_term_2">روش‌های پرداخت وجه</string>
+    <string name="pref_title_term_3">مدت‌زمان و نحوۀ حمل و تحویل سفارش</string>
+    <string name="pref_title_term_4">نحوۀ صدور و ارسال فاکتور رسمی خرید</string>
     <string name="pref_ringtone_silent">بی صدا</string>
     <string name="grant_permission_storage">برای شخصی سازی این قسمت لمس کنید</string>
 
