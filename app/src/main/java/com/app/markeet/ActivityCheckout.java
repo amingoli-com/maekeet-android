@@ -221,6 +221,7 @@ public class ActivityCheckout extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private void displayData() {
         List<Cart> items = db.getActiveCartList();
         adapter = new AdapterShoppingCart(this, false, items);
@@ -239,7 +240,7 @@ public class ActivityCheckout extends AppCompatActivity {
                 shipping.setSelection(buyerProfile.send_by);
             }
         }
-        email.setText("buyer@amingoli.com");
+        email.setText(Tools.getDeviceID(this)+"@amingoli.com");
     }
 
     private void setTotalPrice() {
