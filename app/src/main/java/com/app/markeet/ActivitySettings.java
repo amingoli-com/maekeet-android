@@ -1,5 +1,6 @@
 package com.app.markeet;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.media.Ringtone;
@@ -13,6 +14,7 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
 import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.app.markeet.data.Constant;
@@ -40,7 +42,35 @@ public class ActivitySettings extends PreferenceActivity {
     private ActionBar actionBar;
     private SharedPref sharedPref;
     private View parent_view;
+    private boolean on_permission_result = false;
 
+    @SuppressLint("NewApi")
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // permission checker for android M or higher
+        if (Tools.needRequestPermission() && !on_permission_result) {
+            String[] permission = PermissionUtil.getDeniedPermission(this);
+            if (permission.length != 0) {
+                requestPermissions(permission, 200);
+            } else {
+                startProcess();
+            }
+        } else {
+            startProcess();
+        }
+    }
+
+    private void startProcess(){
+        Preference notifPref = (Preference) findPreference(getString(R.string.pref_title_notif));
+        if (!PermissionUtil.isStorageGranted(this)) {
+            PreferenceCategory prefCat = (PreferenceCategory) findPreference(getString(R.string.pref_group_notif));
+            prefCat.setTitle(Html.fromHtml("<b>" + getString(R.string.pref_group_notif) + "</b><br><i>" + getString(R.string.grant_permission_storage) + "</i>"));
+            notifPref.setEnabled(false);
+        }else{
+            notifPref.setEnabled(true);
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getDelegate().installViewFactory();
@@ -52,13 +82,8 @@ public class ActivitySettings extends PreferenceActivity {
         sharedPref = new SharedPref(this);
 
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_title_ringtone)));
+        startProcess();
 
-        Preference notifPref = (Preference) findPreference(getString(R.string.pref_title_notif));
-        if (!PermissionUtil.isStorageGranted(this)) {
-            PreferenceCategory prefCat = (PreferenceCategory) findPreference(getString(R.string.pref_group_notif));
-            prefCat.setTitle(Html.fromHtml("<b>" + getString(R.string.pref_group_notif) + "</b><br><i>" + getString(R.string.grant_permission_storage) + "</i>"));
-            notifPref.setEnabled(false);
-        }
 
         final Preference prefTerm_1 = (Preference) findPreference(getString(R.string.pref_title_term_1));
         prefTerm_1.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
@@ -279,6 +304,20 @@ public class ActivitySettings extends PreferenceActivity {
             mDelegate = AppCompatDelegate.create(this, null);
         }
         return mDelegate;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == 200) {
+            for (String perm : permissions) {
+                @SuppressLint({"NewApi", "LocalSuppress"})
+                boolean rationale = shouldShowRequestPermissionRationale(perm);
+                sharedPref.setNeverAskAgain(perm, !rationale);
+            }
+            on_permission_result = true;
+        } else {
+            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
     }
 
 }
