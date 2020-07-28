@@ -34,7 +34,7 @@ import retrofit2.Response;
 public class ActivitySplash extends AppCompatActivity {
 
     private SharedPref sharedPref;
-    private boolean on_permission_result = false;
+//    private boolean on_permission_result = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,13 +47,13 @@ public class ActivitySplash extends AppCompatActivity {
     }
 
 
-    @SuppressLint("NewApi")
+//    @SuppressLint("NewApi")
     @Override
     protected void onResume() {
         super.onResume();
 
         // permission checker for android M or higher
-        if (Tools.needRequestPermission() && !on_permission_result) {
+        /*if (Tools.needRequestPermission() && !on_permission_result) {
             String[] permission = PermissionUtil.getDeniedPermission(this);
             if (permission.length != 0) {
                 requestPermissions(permission, 200);
@@ -62,7 +62,8 @@ public class ActivitySplash extends AppCompatActivity {
             }
         } else {
             startProcess();
-        }
+        }*/
+        startProcess();
     }
 
     private void startProcess() {
@@ -87,26 +88,33 @@ public class ActivitySplash extends AppCompatActivity {
     }
 
     private void requestInfo() {
-        API api = RestAdapter.createAPI();
-        Call<CallbackInfo> callbackCall = api.getInfo(Tools.getVersionCode(this));
-        callbackCall.enqueue(new Callback<CallbackInfo>() {
-            @Override
-            public void onResponse(Call<CallbackInfo> call, Response<CallbackInfo> response) {
-                CallbackInfo resp = response.body();
-                if (resp != null && resp.status.equals("success") && resp.info != null) {
-                    Info info = sharedPref.setInfoData(resp.info);
-                    checkAppVersion(info);
-                } else {
+        try {
+            API api = RestAdapter.createAPI();
+            Call<CallbackInfo> callbackCall = api.getInfo(Tools.getVersionCode(this));
+            callbackCall.enqueue(new Callback<CallbackInfo>() {
+                @Override
+                public void onResponse(Call<CallbackInfo> call, Response<CallbackInfo> response) {
+                    CallbackInfo resp = response.body();
+                    if (resp != null && resp.status.equals("success") && resp.info != null) {
+                        Info info = sharedPref.setInfoData(resp.info);
+                        checkAppVersion(info);
+                    } else {
+                        dialogServerNotConnect();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<CallbackInfo> call, Throwable t) {
+                    Log.e("onFailure", t.getMessage());
                     dialogServerNotConnect();
                 }
-            }
+            });
+        }catch (Exception e){
+            Log.e("onFailure", e.getMessage());
+            dialogServerNotConnect();
+        }
 
-            @Override
-            public void onFailure(Call<CallbackInfo> call, Throwable t) {
-                Log.e("onFailure", t.getMessage());
-                dialogServerNotConnect();
-            }
-        });
+
     }
 
     private void checkAppVersion(Info info) {
@@ -174,7 +182,7 @@ public class ActivitySplash extends AppCompatActivity {
         }, 2000);
     }
 
-    @Override
+    /*@Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == 200) {
             for (String perm : permissions) {
@@ -186,6 +194,6 @@ public class ActivitySplash extends AppCompatActivity {
         } else {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
-    }
+    }*/
 
 }
