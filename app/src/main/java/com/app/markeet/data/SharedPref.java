@@ -21,6 +21,7 @@ public class SharedPref {
 
     private static final String FCM_PREF_KEY = "_.FCM_PREF_KEY";
     private static final String FIRST_LAUNCH = "_.FIRST_LAUNCH";
+    private static final String FIRST_ORDER = "_.FIRST_ORDER";
     private static final String INFO_DATA = "_.INFO_DATA_KEY";
     private static final String BUYER_PROFILE = "_.BUYER_PROFILE_KEY";
 
@@ -40,6 +41,17 @@ public class SharedPref {
 
     public boolean isFirstLaunch() {
         return sharedPreferences.getBoolean(FIRST_LAUNCH, true);
+    }
+
+    /**
+     * Preference for first order
+     */
+    public void setFirstOrder(boolean flag) {
+        sharedPreferences.edit().putBoolean(FIRST_ORDER, flag).apply();
+    }
+
+    public boolean isFirstOrder() {
+        return sharedPreferences.getBoolean(FIRST_ORDER, true);
     }
 
     /**

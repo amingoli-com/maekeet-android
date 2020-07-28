@@ -331,6 +331,11 @@ public class ActivityCheckout extends AppCompatActivity {
                     }
                     db.saveOrder(order);
                     dialogSuccess(order.code);
+
+                    if (sharedPref.isFirstOrder()){
+                        sharedPref.setFirstOrder(false);
+                    }
+
                 } else {
                     dialogFailedRetry();
                 }
@@ -370,12 +375,14 @@ public class ActivityCheckout extends AppCompatActivity {
                 delaySubmitOrderData();
             }
         });
-        /*builder.setNegativeButton(R.string.pay_online, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                zarinPalPayment();
-            }
-        });*/
+        if (!sharedPref.isFirstOrder()){
+            builder.setNegativeButton(R.string.pay_online, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    zarinPalPayment();
+                }
+            });
+        }
         builder.show();
     }
 
