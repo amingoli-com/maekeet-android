@@ -1,4 +1,4 @@
-package com.app.markeet.data;
+package com.amingoli.markeet.data;
 
 public class Constant {
 

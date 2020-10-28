@@ -1,4 +1,4 @@
-package com.app.markeet.utils;
+package com.amingoli.markeet.utils;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.app.markeet.R;
+import com.amingoli.markeet.R;
 
 public class DialogUtils {
 

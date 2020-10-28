@@ -1,15 +1,13 @@
-package com.app.markeet.data;
+package com.amingoli.markeet.data;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
-import android.util.Log;
 
-import com.app.markeet.BuildConfig;
-import com.app.markeet.R;
-import com.app.markeet.model.BuyerProfile;
-import com.app.markeet.model.Info;
+import com.amingoli.markeet.R;
+import com.amingoli.markeet.model.BuyerProfile;
+import com.amingoli.markeet.model.Info;
 import com.google.gson.Gson;
 
 public class SharedPref {

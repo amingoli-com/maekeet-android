@@ -1,17 +1,17 @@
-package com.app.markeet.connection;
+package com.amingoli.markeet.connection;
 
-import com.app.markeet.connection.callbacks.CallbackCategory;
-import com.app.markeet.connection.callbacks.CallbackDevice;
-import com.app.markeet.connection.callbacks.CallbackFeaturedNews;
-import com.app.markeet.connection.callbacks.CallbackInfo;
-import com.app.markeet.connection.callbacks.CallbackNewsInfo;
-import com.app.markeet.connection.callbacks.CallbackNewsInfoDetails;
-import com.app.markeet.connection.callbacks.CallbackOrder;
-import com.app.markeet.connection.callbacks.CallbackProduct;
-import com.app.markeet.connection.callbacks.CallbackProductDetails;
-import com.app.markeet.data.Constant;
-import com.app.markeet.model.Checkout;
-import com.app.markeet.model.DeviceInfo;
+import com.amingoli.markeet.connection.callbacks.CallbackCategory;
+import com.amingoli.markeet.connection.callbacks.CallbackDevice;
+import com.amingoli.markeet.connection.callbacks.CallbackFeaturedNews;
+import com.amingoli.markeet.connection.callbacks.CallbackInfo;
+import com.amingoli.markeet.connection.callbacks.CallbackNewsInfo;
+import com.amingoli.markeet.connection.callbacks.CallbackNewsInfoDetails;
+import com.amingoli.markeet.connection.callbacks.CallbackOrder;
+import com.amingoli.markeet.connection.callbacks.CallbackProduct;
+import com.amingoli.markeet.connection.callbacks.CallbackProductDetails;
+import com.amingoli.markeet.data.Constant;
+import com.amingoli.markeet.model.Checkout;
+import com.amingoli.markeet.model.DeviceInfo;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

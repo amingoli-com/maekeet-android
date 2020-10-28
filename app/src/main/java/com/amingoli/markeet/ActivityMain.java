@@ -1,10 +1,7 @@
-package com.app.markeet;
+package com.amingoli.markeet;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import androidx.annotation.StringRes;
@@ -22,7 +19,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.appcompat.widget.Toolbar;
 
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,24 +27,22 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.app.markeet.data.AppConfig;
-import com.app.markeet.data.DatabaseHandler;
-import com.app.markeet.data.GDPR;
-import com.app.markeet.data.SharedPref;
-import com.app.markeet.fragment.FragmentCategory;
-import com.app.markeet.fragment.FragmentFeaturedNews;
-import com.app.markeet.utils.CallbackDialog;
-import com.app.markeet.utils.DialogUtils;
-import com.app.markeet.utils.NetworkCheck;
-import com.app.markeet.utils.Tools;
+import com.amingoli.markeet.data.AppConfig;
+import com.amingoli.markeet.data.DatabaseHandler;
+import com.amingoli.markeet.data.GDPR;
+import com.amingoli.markeet.data.SharedPref;
+import com.amingoli.markeet.fragment.FragmentCategory;
+import com.amingoli.markeet.fragment.FragmentFeaturedNews;
+import com.amingoli.markeet.utils.CallbackDialog;
+import com.amingoli.markeet.utils.DialogUtils;
+import com.amingoli.markeet.utils.NetworkCheck;
+import com.amingoli.markeet.utils.Tools;
 import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
-
-import java.util.Locale;
 
 public class ActivityMain extends AppCompatActivity {
 

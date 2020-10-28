@@ -1,4 +1,4 @@
-package com.app.markeet.adapter;
+package com.amingoli.markeet.adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,9 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
-import com.app.markeet.R;
-import com.app.markeet.utils.Tools;
-import com.app.markeet.widget.TouchImageView;
+import com.amingoli.markeet.R;
+import com.amingoli.markeet.utils.Tools;
+import com.amingoli.markeet.widget.TouchImageView;
 
 import java.util.List;
 

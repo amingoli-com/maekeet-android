@@ -1,4 +1,4 @@
-package com.app.markeet;
+package com.amingoli.markeet;
 
 import android.app.Activity;
 import android.app.Application;
@@ -10,14 +10,14 @@ import androidx.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.app.markeet.connection.API;
-import com.app.markeet.connection.RestAdapter;
-import com.app.markeet.connection.callbacks.CallbackDevice;
-import com.app.markeet.data.SharedPref;
-import com.app.markeet.model.DeviceInfo;
-import com.app.markeet.model.SortBy;
-import com.app.markeet.utils.NetworkCheck;
-import com.app.markeet.utils.Tools;
+import com.amingoli.markeet.connection.API;
+import com.amingoli.markeet.connection.RestAdapter;
+import com.amingoli.markeet.connection.callbacks.CallbackDevice;
+import com.amingoli.markeet.data.SharedPref;
+import com.amingoli.markeet.model.DeviceInfo;
+import com.amingoli.markeet.model.SortBy;
+import com.amingoli.markeet.utils.NetworkCheck;
+import com.amingoli.markeet.utils.Tools;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;

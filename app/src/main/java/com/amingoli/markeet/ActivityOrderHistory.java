@@ -1,4 +1,4 @@
-package com.app.markeet;
+package com.amingoli.markeet;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -19,13 +19,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.app.markeet.adapter.AdapterOrderHistory;
-import com.app.markeet.adapter.AdapterShoppingCart;
-import com.app.markeet.data.DatabaseHandler;
-import com.app.markeet.data.SharedPref;
-import com.app.markeet.model.Info;
-import com.app.markeet.model.Order;
-import com.app.markeet.utils.Tools;
+import com.amingoli.markeet.adapter.AdapterOrderHistory;
+import com.amingoli.markeet.adapter.AdapterShoppingCart;
+import com.amingoli.markeet.data.DatabaseHandler;
+import com.amingoli.markeet.data.SharedPref;
+import com.amingoli.markeet.model.Info;
+import com.amingoli.markeet.model.Order;
+import com.amingoli.markeet.utils.Tools;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.app.markeet;
+package com.amingoli.markeet;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -14,11 +14,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.app.markeet.adapter.AdapterWishlist;
-import com.app.markeet.data.Constant;
-import com.app.markeet.data.DatabaseHandler;
-import com.app.markeet.model.Wishlist;
-import com.app.markeet.utils.Tools;
+import com.amingoli.markeet.adapter.AdapterWishlist;
+import com.amingoli.markeet.data.Constant;
+import com.amingoli.markeet.data.DatabaseHandler;
+import com.amingoli.markeet.model.Wishlist;
+import com.amingoli.markeet.utils.Tools;
 
 import java.util.ArrayList;
 import java.util.List;

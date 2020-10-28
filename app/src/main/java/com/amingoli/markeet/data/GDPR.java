@@ -1,10 +1,10 @@
-package com.app.markeet.data;
+package com.amingoli.markeet.data;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.app.markeet.BuildConfig;
+import com.amingoli.markeet.BuildConfig;
 import com.google.ads.consent.ConsentForm;
 import com.google.ads.consent.ConsentFormListener;
 import com.google.ads.consent.ConsentInfoUpdateListener;

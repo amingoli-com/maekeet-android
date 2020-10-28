@@ -1,4 +1,4 @@
-package com.app.markeet;
+package com.amingoli.markeet;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.app.markeet.adapter.AdapterFullScreenImage;
-import com.app.markeet.utils.Tools;
+import com.amingoli.markeet.adapter.AdapterFullScreenImage;
+import com.amingoli.markeet.utils.Tools;
 
 import java.util.ArrayList;
 

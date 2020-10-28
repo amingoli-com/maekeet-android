@@ -1,4 +1,4 @@
-package com.app.markeet.adapter;
+package com.amingoli.markeet.adapter;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -21,16 +21,15 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.app.markeet.ActivityShoppingCart;
-import com.app.markeet.R;
-import com.app.markeet.data.AppConfig;
-import com.app.markeet.data.Constant;
-import com.app.markeet.data.DatabaseHandler;
-import com.app.markeet.data.SharedPref;
-import com.app.markeet.model.Cart;
-import com.app.markeet.model.Product;
-import com.app.markeet.utils.FaNum;
-import com.app.markeet.utils.Tools;
+import com.amingoli.markeet.R;
+import com.amingoli.markeet.data.AppConfig;
+import com.amingoli.markeet.data.Constant;
+import com.amingoli.markeet.data.DatabaseHandler;
+import com.amingoli.markeet.data.SharedPref;
+import com.amingoli.markeet.model.Cart;
+import com.amingoli.markeet.model.Product;
+import com.amingoli.markeet.utils.FaNum;
+import com.amingoli.markeet.utils.Tools;
 import com.balysv.materialripple.MaterialRippleLayout;
 
 import java.util.ArrayList;

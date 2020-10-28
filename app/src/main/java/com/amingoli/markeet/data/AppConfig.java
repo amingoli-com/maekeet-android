@@ -1,4 +1,4 @@
-package com.app.markeet.data;
+package com.amingoli.markeet.data;
 
 import java.util.Locale;
 

@@ -1,4 +1,4 @@
-package com.app.markeet.fragment;
+package com.amingoli.markeet.fragment;
 
 import android.os.Bundle;
 import androidx.annotation.Nullable;
@@ -12,15 +12,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.app.markeet.ActivityCategoryDetails;
-import com.app.markeet.ActivityMain;
-import com.app.markeet.R;
-import com.app.markeet.adapter.AdapterCategory;
-import com.app.markeet.connection.API;
-import com.app.markeet.connection.RestAdapter;
-import com.app.markeet.connection.callbacks.CallbackCategory;
-import com.app.markeet.model.Category;
-import com.app.markeet.utils.NetworkCheck;
+import com.amingoli.markeet.ActivityCategoryDetails;
+import com.amingoli.markeet.ActivityMain;
+import com.amingoli.markeet.R;
+import com.amingoli.markeet.adapter.AdapterCategory;
+import com.amingoli.markeet.connection.API;
+import com.amingoli.markeet.connection.RestAdapter;
+import com.amingoli.markeet.connection.callbacks.CallbackCategory;
+import com.amingoli.markeet.model.Category;
+import com.amingoli.markeet.utils.NetworkCheck;
 
 import java.util.ArrayList;
 

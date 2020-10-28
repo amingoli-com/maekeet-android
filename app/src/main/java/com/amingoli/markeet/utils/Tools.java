@@ -1,4 +1,4 @@
-package com.app.markeet.utils;
+package com.amingoli.markeet.utils;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -29,18 +29,16 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.app.markeet.R;
-import com.app.markeet.data.AppConfig;
-import com.app.markeet.data.SharedPref;
-import com.app.markeet.model.DeviceInfo;
+import com.amingoli.markeet.R;
+import com.amingoli.markeet.data.AppConfig;
+import com.amingoli.markeet.data.SharedPref;
+import com.amingoli.markeet.model.DeviceInfo;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.io.File;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import saman.zamani.persiandate.PersianDate;
 import saman.zamani.persiandate.PersianDateFormat;

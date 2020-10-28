@@ -1,4 +1,4 @@
-package com.app.markeet.connection.callbacks;
+package com.amingoli.markeet.connection.callbacks;
 
 import java.io.Serializable;
 

@@ -1,10 +1,10 @@
-package com.app.markeet.data;
+package com.amingoli.markeet.data;
 
 import android.app.Activity;
 import androidx.annotation.NonNull;
 
-import com.app.markeet.BuildConfig;
-import com.app.markeet.R;
+import com.amingoli.markeet.BuildConfig;
+import com.amingoli.markeet.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;

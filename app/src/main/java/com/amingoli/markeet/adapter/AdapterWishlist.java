@@ -1,4 +1,4 @@
-package com.app.markeet.adapter;
+package com.amingoli.markeet.adapter;
 
 import android.content.Context;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,10 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.app.markeet.R;
-import com.app.markeet.data.Constant;
-import com.app.markeet.model.Wishlist;
-import com.app.markeet.utils.Tools;
+import com.amingoli.markeet.R;
+import com.amingoli.markeet.data.Constant;
+import com.amingoli.markeet.model.Wishlist;
+import com.amingoli.markeet.utils.Tools;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.app.markeet;
+package com.amingoli.markeet;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,10 +14,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.app.markeet.data.Constant;
-import com.app.markeet.data.DatabaseHandler;
-import com.app.markeet.model.Notification;
-import com.app.markeet.utils.Tools;
+import com.amingoli.markeet.data.Constant;
+import com.amingoli.markeet.data.DatabaseHandler;
+import com.amingoli.markeet.model.Notification;
+import com.amingoli.markeet.utils.Tools;
 
 public class ActivityDialogNotification extends AppCompatActivity {
 

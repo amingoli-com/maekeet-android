@@ -1,4 +1,4 @@
-package com.app.markeet.fragment;
+package com.amingoli.markeet.fragment;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -19,16 +19,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.app.markeet.ActivityMain;
-import com.app.markeet.ActivityNewsInfoDetails;
-import com.app.markeet.R;
-import com.app.markeet.adapter.AdapterFeaturedNews;
-import com.app.markeet.connection.API;
-import com.app.markeet.connection.RestAdapter;
-import com.app.markeet.connection.callbacks.CallbackFeaturedNews;
-import com.app.markeet.model.NewsInfo;
-import com.app.markeet.utils.NetworkCheck;
-import com.app.markeet.utils.Tools;
+import com.amingoli.markeet.ActivityMain;
+import com.amingoli.markeet.ActivityNewsInfoDetails;
+import com.amingoli.markeet.R;
+import com.amingoli.markeet.adapter.AdapterFeaturedNews;
+import com.amingoli.markeet.connection.API;
+import com.amingoli.markeet.connection.RestAdapter;
+import com.amingoli.markeet.connection.callbacks.CallbackFeaturedNews;
+import com.amingoli.markeet.model.NewsInfo;
+import com.amingoli.markeet.utils.NetworkCheck;
+import com.amingoli.markeet.utils.Tools;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.app.markeet.utils;
+package com.amingoli.markeet.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

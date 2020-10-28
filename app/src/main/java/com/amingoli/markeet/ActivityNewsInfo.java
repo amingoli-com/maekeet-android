@@ -1,4 +1,4 @@
-package com.app.markeet;
+package com.amingoli.markeet;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,14 +13,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.app.markeet.adapter.AdapterNewsInfo;
-import com.app.markeet.connection.API;
-import com.app.markeet.connection.RestAdapter;
-import com.app.markeet.connection.callbacks.CallbackNewsInfo;
-import com.app.markeet.data.Constant;
-import com.app.markeet.model.NewsInfo;
-import com.app.markeet.utils.NetworkCheck;
-import com.app.markeet.utils.Tools;
+import com.amingoli.markeet.adapter.AdapterNewsInfo;
+import com.amingoli.markeet.connection.API;
+import com.amingoli.markeet.connection.RestAdapter;
+import com.amingoli.markeet.connection.callbacks.CallbackNewsInfo;
+import com.amingoli.markeet.data.Constant;
+import com.amingoli.markeet.model.NewsInfo;
+import com.amingoli.markeet.utils.NetworkCheck;
+import com.amingoli.markeet.utils.Tools;
 
 import java.util.ArrayList;
 import java.util.List;

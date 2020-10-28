@@ -1,4 +1,4 @@
-package com.app.markeet;
+package com.amingoli.markeet;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -14,11 +14,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.app.markeet.adapter.AdapterNotification;
-import com.app.markeet.data.Constant;
-import com.app.markeet.data.DatabaseHandler;
-import com.app.markeet.model.Notification;
-import com.app.markeet.utils.Tools;
+import com.amingoli.markeet.adapter.AdapterNotification;
+import com.amingoli.markeet.data.Constant;
+import com.amingoli.markeet.data.DatabaseHandler;
+import com.amingoli.markeet.model.Notification;
+import com.amingoli.markeet.utils.Tools;
 
 import java.util.ArrayList;
 import java.util.List;

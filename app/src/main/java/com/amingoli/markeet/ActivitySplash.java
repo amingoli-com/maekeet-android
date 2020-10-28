@@ -1,29 +1,23 @@
-package com.app.markeet;
+package com.amingoli.markeet;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 
-import com.app.markeet.connection.API;
-import com.app.markeet.connection.RestAdapter;
-import com.app.markeet.connection.callbacks.CallbackInfo;
-import com.app.markeet.data.SharedPref;
-import com.app.markeet.model.Info;
-import com.app.markeet.utils.CallbackDialog;
-import com.app.markeet.utils.DialogUtils;
-import com.app.markeet.utils.NetworkCheck;
-import com.app.markeet.utils.PermissionUtil;
-import com.app.markeet.utils.Tools;
+import com.amingoli.markeet.connection.API;
+import com.amingoli.markeet.connection.RestAdapter;
+import com.amingoli.markeet.connection.callbacks.CallbackInfo;
+import com.amingoli.markeet.data.SharedPref;
+import com.amingoli.markeet.model.Info;
+import com.amingoli.markeet.utils.CallbackDialog;
+import com.amingoli.markeet.utils.DialogUtils;
+import com.amingoli.markeet.utils.NetworkCheck;
+import com.amingoli.markeet.utils.Tools;
 
-import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 

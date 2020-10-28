@@ -1,4 +1,4 @@
-package com.app.markeet.fcm;
+package com.amingoli.markeet.fcm;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -16,13 +16,13 @@ import android.os.Vibrator;
 import androidx.core.app.NotificationCompat;
 import android.util.Log;
 
-import com.app.markeet.ActivityDialogNotification;
-import com.app.markeet.R;
-import com.app.markeet.data.Constant;
-import com.app.markeet.data.DatabaseHandler;
-import com.app.markeet.data.SharedPref;
-import com.app.markeet.model.Notification;
-import com.app.markeet.utils.CallbackImageNotif;
+import com.amingoli.markeet.ActivityDialogNotification;
+import com.amingoli.markeet.R;
+import com.amingoli.markeet.data.Constant;
+import com.amingoli.markeet.data.DatabaseHandler;
+import com.amingoli.markeet.data.SharedPref;
+import com.amingoli.markeet.model.Notification;
+import com.amingoli.markeet.utils.CallbackImageNotif;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;

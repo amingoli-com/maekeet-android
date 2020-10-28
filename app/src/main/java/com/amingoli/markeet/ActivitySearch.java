@@ -1,4 +1,4 @@
-package com.app.markeet;
+package com.amingoli.markeet;
 
 import android.app.Activity;
 import android.content.Context;
@@ -27,16 +27,16 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.app.markeet.adapter.AdapterProduct;
-import com.app.markeet.connection.API;
-import com.app.markeet.connection.RestAdapter;
-import com.app.markeet.connection.callbacks.CallbackProduct;
-import com.app.markeet.data.Constant;
-import com.app.markeet.model.Category;
-import com.app.markeet.model.Product;
-import com.app.markeet.model.SortBy;
-import com.app.markeet.utils.NetworkCheck;
-import com.app.markeet.utils.Tools;
+import com.amingoli.markeet.adapter.AdapterProduct;
+import com.amingoli.markeet.connection.API;
+import com.amingoli.markeet.connection.RestAdapter;
+import com.amingoli.markeet.connection.callbacks.CallbackProduct;
+import com.amingoli.markeet.data.Constant;
+import com.amingoli.markeet.model.Category;
+import com.amingoli.markeet.model.Product;
+import com.amingoli.markeet.model.SortBy;
+import com.amingoli.markeet.utils.NetworkCheck;
+import com.amingoli.markeet.utils.Tools;
 
 import java.util.ArrayList;
 import java.util.List;

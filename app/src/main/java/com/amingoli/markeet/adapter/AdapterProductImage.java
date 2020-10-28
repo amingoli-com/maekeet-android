@@ -1,4 +1,4 @@
-package com.app.markeet.adapter;
+package com.amingoli.markeet.adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.app.markeet.R;
-import com.app.markeet.data.Constant;
-import com.app.markeet.model.ProductImage;
-import com.app.markeet.utils.Tools;
+import com.amingoli.markeet.R;
+import com.amingoli.markeet.data.Constant;
+import com.amingoli.markeet.model.ProductImage;
+import com.amingoli.markeet.utils.Tools;
 import com.balysv.materialripple.MaterialRippleLayout;
 
 import java.util.List;

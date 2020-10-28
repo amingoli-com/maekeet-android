@@ -1,4 +1,4 @@
-package com.app.markeet;
+package com.amingoli.markeet;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -7,8 +7,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
-import com.app.markeet.data.AppConfig;
-import com.app.markeet.utils.FaNum;
+import com.amingoli.markeet.data.AppConfig;
+import com.amingoli.markeet.utils.FaNum;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
@@ -18,7 +18,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Handler;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,12 +27,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.app.markeet.adapter.AdapterShoppingCart;
-import com.app.markeet.data.DatabaseHandler;
-import com.app.markeet.data.SharedPref;
-import com.app.markeet.model.Cart;
-import com.app.markeet.model.Info;
-import com.app.markeet.utils.Tools;
+import com.amingoli.markeet.adapter.AdapterShoppingCart;
+import com.amingoli.markeet.data.DatabaseHandler;
+import com.amingoli.markeet.data.SharedPref;
+import com.amingoli.markeet.model.Cart;
+import com.amingoli.markeet.model.Info;
+import com.amingoli.markeet.utils.Tools;
 
 import java.util.List;
 

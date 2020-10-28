@@ -1,4 +1,4 @@
-package com.app.markeet;
+package com.amingoli.markeet;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -17,8 +17,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.app.markeet.data.SharedPref;
-import com.app.markeet.utils.Tools;
+import com.amingoli.markeet.data.SharedPref;
+import com.amingoli.markeet.utils.Tools;
 
 public class ActivityInstruction extends AppCompatActivity {
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.app.markeet"
+    package="com.amingoli.markeet"
     tools:ignore="GoogleAppIndexingWarning">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -14,7 +14,7 @@
 <!--    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />-->
 
     <application
-        android:name=".ThisApplication"
+        android:name="com.amingoli.markeet.ThisApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -28,7 +28,7 @@
             android:required="false" />
 
         <!-- List Of Activity Class -->
-        <activity android:name=".ActivitySplash">
+        <activity android:name="com.amingoli.markeet.ActivitySplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,19 +36,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ActivityMain"
+            android:name="com.amingoli.markeet.ActivityMain"
             android:configChanges="orientation|keyboardHidden|screenSize" />
-        <activity android:name=".ActivityInstruction" />
-        <activity android:name=".ActivityNewsInfo" />
-        <activity android:name=".ActivityNewsInfoDetails" />
-        <activity android:name=".ActivityCategoryDetails" />
-        <activity android:name=".ActivityProductDetails" />
-        <activity android:name=".ActivityFullScreenImage" />
-        <activity android:name=".ActivitySearch" />
-        <activity android:name=".ActivityNotification" />
-        <activity android:name=".ActivityWishlist" />
-        <activity android:name=".ActivityShoppingCart" />
-        <activity android:name=".ActivityCheckout">
+        <activity android:name="com.amingoli.markeet.ActivityInstruction" />
+        <activity android:name="com.amingoli.markeet.ActivityNewsInfo" />
+        <activity android:name="com.amingoli.markeet.ActivityNewsInfoDetails" />
+        <activity android:name="com.amingoli.markeet.ActivityCategoryDetails" />
+        <activity android:name="com.amingoli.markeet.ActivityProductDetails" />
+        <activity android:name="com.amingoli.markeet.ActivityFullScreenImage" />
+        <activity android:name="com.amingoli.markeet.ActivitySearch" />
+        <activity android:name="com.amingoli.markeet.ActivityNotification" />
+        <activity android:name="com.amingoli.markeet.ActivityWishlist" />
+        <activity android:name="com.amingoli.markeet.ActivityShoppingCart" />
+        <activity android:name="com.amingoli.markeet.ActivityCheckout">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -56,12 +56,12 @@
                 <data android:scheme="return" android:host="zarinpalpayment"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityOrderHistory" />
+        <activity android:name="com.amingoli.markeet.ActivityOrderHistory" />
         <activity
-            android:name=".ActivityDialogNotification"
+            android:name="com.amingoli.markeet.ActivityDialogNotification"
             android:theme="@style/AppTheme.Dialog.NoActionBar" />
         <activity
-            android:name=".ActivitySettings"
+            android:name="com.amingoli.markeet.ActivitySettings"
             android:theme="@style/AppThemeSetting" />
 
         <!-- Ads activity -->
@@ -71,7 +71,7 @@
             android:theme="@android:style/Theme.Translucent" />
 
         <!-- fireBase service -->
-        <service android:name=".fcm.FcmMessagingService"
+        <service android:name="com.amingoli.markeet.fcm.FcmMessagingService"
             tools:ignore="ExportedService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

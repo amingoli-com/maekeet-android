@@ -1,6 +1,6 @@
-package com.app.markeet.connection.callbacks;
+package com.amingoli.markeet.connection.callbacks;
 
-import com.app.markeet.model.Category;
+import com.amingoli.markeet.model.Category;
 
 import java.io.Serializable;
 import java.util.ArrayList;

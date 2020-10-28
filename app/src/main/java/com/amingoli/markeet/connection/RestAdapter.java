@@ -1,7 +1,7 @@
-package com.app.markeet.connection;
+package com.amingoli.markeet.connection;
 
-import com.app.markeet.BuildConfig;
-import com.app.markeet.data.Constant;
+import com.amingoli.markeet.BuildConfig;
+import com.amingoli.markeet.data.Constant;
 
 import java.util.concurrent.TimeUnit;
 

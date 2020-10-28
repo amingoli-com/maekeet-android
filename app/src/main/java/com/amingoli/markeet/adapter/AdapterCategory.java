@@ -1,4 +1,4 @@
-package com.app.markeet.adapter;
+package com.amingoli.markeet.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -10,11 +10,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.app.markeet.R;
-import com.app.markeet.data.AppConfig;
-import com.app.markeet.data.Constant;
-import com.app.markeet.model.Category;
-import com.app.markeet.utils.Tools;
+import com.amingoli.markeet.R;
+import com.amingoli.markeet.data.AppConfig;
+import com.amingoli.markeet.data.Constant;
+import com.amingoli.markeet.model.Category;
+import com.amingoli.markeet.utils.Tools;
 import com.balysv.materialripple.MaterialRippleLayout;
 
 import java.util.ArrayList;

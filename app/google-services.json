@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "85217903986",
-    "firebase_url": "https://markeet-2020.firebaseio.com",
-    "project_id": "markeet-2020",
-    "storage_bucket": "markeet-2020.appspot.com"
+    "project_number": "259920199309",
+    "firebase_url": "https://markeet-139908.firebaseio.com",
+    "project_id": "markeet-139908",
+    "storage_bucket": "markeet-139908.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:85217903986:android:697dae16aef847797f49eb",
+        "mobilesdk_app_id": "1:259920199309:android:9eaa294e9cf63fab0bacc4",
         "android_client_info": {
-          "package_name": "ir.goliforoshani.markeet"
+          "package_name": "com.amingoli.markeet"
         }
       },
       "oauth_client": [
         {
-          "client_id": "85217903986-cqqjsgktselc3vhvbbvp20vmrk2q7jr3.apps.googleusercontent.com",
+          "client_id": "259920199309-a28ec3jaoaoic9m2lvuuv54d1nn7nta6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAP5ItjuoSCF_g16Y5fV8bjDAp4v4AFmFQ"
+          "current_key": "AIzaSyDoI4QFL6ZHUU2DCUaDMxjPndTs4jt_bes"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "85217903986-cqqjsgktselc3vhvbbvp20vmrk2q7jr3.apps.googleusercontent.com",
+              "client_id": "259920199309-a28ec3jaoaoic9m2lvuuv54d1nn7nta6.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

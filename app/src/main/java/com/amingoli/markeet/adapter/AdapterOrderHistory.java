@@ -1,4 +1,4 @@
-package com.app.markeet.adapter;
+package com.amingoli.markeet.adapter;
 
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.app.markeet.R;
-import com.app.markeet.data.SharedPref;
-import com.app.markeet.model.Order;
-import com.app.markeet.utils.Tools;
+import com.amingoli.markeet.R;
+import com.amingoli.markeet.data.SharedPref;
+import com.amingoli.markeet.model.Order;
+import com.amingoli.markeet.utils.Tools;
 import com.balysv.materialripple.MaterialRippleLayout;
 
 import java.util.ArrayList;

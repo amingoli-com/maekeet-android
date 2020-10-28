@@ -1,4 +1,4 @@
-package com.app.markeet.data;
+package com.amingoli.markeet.data;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,10 +8,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.app.markeet.model.Cart;
-import com.app.markeet.model.Notification;
-import com.app.markeet.model.Order;
-import com.app.markeet.model.Wishlist;
+import com.amingoli.markeet.model.Cart;
+import com.amingoli.markeet.model.Notification;
+import com.amingoli.markeet.model.Order;
+import com.amingoli.markeet.model.Wishlist;
 
 import java.util.ArrayList;
 import java.util.List;

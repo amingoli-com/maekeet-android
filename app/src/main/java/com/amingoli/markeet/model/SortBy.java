@@ -1,4 +1,4 @@
-package com.app.markeet.model;
+package com.amingoli.markeet.model;
 
 public class SortBy {
 

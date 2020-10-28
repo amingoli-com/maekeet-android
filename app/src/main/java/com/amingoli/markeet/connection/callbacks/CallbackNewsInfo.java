@@ -1,6 +1,6 @@
-package com.app.markeet.connection.callbacks;
+package com.amingoli.markeet.connection.callbacks;
 
-import com.app.markeet.model.NewsInfo;
+import com.amingoli.markeet.model.NewsInfo;
 
 import java.io.Serializable;
 import java.util.ArrayList;

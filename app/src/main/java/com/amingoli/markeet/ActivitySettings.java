@@ -1,4 +1,4 @@
-package com.app.markeet;
+package com.amingoli.markeet;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -17,7 +17,7 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.app.markeet.data.Constant;
+import com.amingoli.markeet.data.Constant;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -29,9 +29,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.app.markeet.data.SharedPref;
-import com.app.markeet.utils.PermissionUtil;
-import com.app.markeet.utils.Tools;
+import com.amingoli.markeet.data.SharedPref;
+import com.amingoli.markeet.utils.PermissionUtil;
+import com.amingoli.markeet.utils.Tools;
 
 /**
  * ATTENTION : To see where list of setting comes is open res/xml/setting_preferences.xml
