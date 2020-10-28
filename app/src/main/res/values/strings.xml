@@ -67,7 +67,7 @@
 
     <!--All data for ActivityShoppingCart.java -->
     <string name="msg_cart_empty">سبد خرید خالیه</string>
-<!--    <string name="before_tax">قبل از محاسبه مالیات</string>-->
+<!--    <string name="before_tax">بدون احتساب مالیات</string>-->
     <string name="before_tax"></string>
     <string name="total">قابل پرداخت &#160;</string>
     <string name="stock">موجودی : &#160;</string>
@@ -92,8 +92,8 @@
     <!--All data for ActivityCheckout.java -->
     <string name="cost_details">هزینه ها</string>
     <string name="total_order">جمع &#160;</string>
-<!--    <string name="tax">مالیات &#160;</string>-->
-    <string name="tax">هزینه ارسال</string>
+    <string name="tax">مالیات &#160;</string>
+<!--    <string name="tax">هزینه ارسال</string>-->
     <string name="total_fess">جمع کل &#160;</string>
     <string name="buyer_profile">مشخصات شما</string>
     <string name="hint_name">نام</string>
@@ -117,7 +117,7 @@
     <string name="title_please_wait">صبر کنید</string>
     <string name="content_submit_checkout">درحال ثبت سفارش &#8230;</string>
     <string name="confirmation">تایید سفارش</string>
-    <string name="confirm_checkout">با چه روشی میخواهید پرداخت کنید؟</string>
+    <string name="confirm_checkout">سفارش ثبت شود؟</string>
     <string name="failed_checkout_online">فرآیند ثبت سفارش با شکست مواجه شد، در صورت کسر مبلغ از حساب و عدم استرداد طی ۷۲ ساعت آینده با پشتیبانی تماس حاصل فرمایید</string>
     <string name="failed_checkout">فرآیند ثبت سفارش با شکست مواجه شد، از اتصال به اینترنت اطمینان حاصل فرمایید و مجددا تلاش کنید</string>
     <string name="success_checkout">سفارش با موفقیت ثبت شد!</string>
@@ -125,7 +125,7 @@
     <string name="process_checkout">ثبت سفارش</string>
     <string name="processed">پردازش شد</string>
     <string name="waiting">درحال پردازش</string>
-    <string name="cancel">لغو شد</string>
+    <string name="cancel">لغو</string>
 
     <!--All data ActivityNewsInfoDetails.java -->
     <string name="featured">ویژه</string>
@@ -239,10 +239,14 @@
     <string name="order_code">کد پیگیری : &#160;</string>
     <string name="maximum_inventory">امکان اضافه کردن وجود ندارد</string>
     <string name="desc_shopping_cart">با لمس بر روی محصولات تعداد آنها را مشخص کنید</string>
-    <string name="pay_online">پرداخت آنلاین</string>
-    <string name="pay_at_home">پرداخت درب منزل</string>
+    <string name="pay_online">پرداخت سفارش به صورت آنلاین</string>
+    <string name="pay_at_home">پرداخت سفارش درب منزل</string>
     <string name="your_code_online_payment">کد پیگیری شما: </string>
     <string name="minimum_cart_for_send">سفارش شماد باید حداقل %1$s باشد</string>
     <string name="zarinpal_status_failed">خطا در ایجاد درخواست پرداخت</string>
+    <string name="yes">بله</string>
+    <string name="pay">پرداخت</string>
+    <string name="online">آنلاین</string>
+    <string name="ok">باشه</string>
 
 </resources>

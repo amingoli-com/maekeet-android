@@ -15,13 +15,9 @@ public class FaNum {
                 {"8", "۸"},
                 {"9", "۹"}
         };
-
         for (String[] num : mChars) {
-
             faNumbers = faNumbers.replace(num[0], num[1]);
-
         }
-
         return faNumbers;
     }
 

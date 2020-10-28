@@ -91,6 +91,7 @@ public class ActivityCheckout extends AppCompatActivity {
     // construct dialog progress
     ProgressDialog progressDialog = null;
     private Long g = 0L;
+    private boolean payOnline = false; // in dialogConfirmCheckout();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -366,24 +367,37 @@ public class ActivityCheckout extends AppCompatActivity {
     }
 
     public void dialogConfirmCheckout() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        String massageDialog;
+        String string_ship = shipping.getSelectedItem().toString();
+        if (string_ship.contains(getString(R.string.pay))
+                && string_ship.contains(getString(R.string.online))){
+            payOnline = true;
+            massageDialog = getString(R.string.pay_online);
+        }else {
+            payOnline = false;
+            massageDialog = getString(R.string.pay_at_home);
+        }
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.confirmation);
-        builder.setMessage(getString(R.string.confirm_checkout));
-        builder.setPositiveButton(R.string.pay_at_home, new DialogInterface.OnClickListener() {
+        builder.setMessage(massageDialog);
+        builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                comment.setText(getString(R.string.pay_at_home));
-                delaySubmitOrderData();
+                if (payOnline) {
+                    zarinPalPayment();
+                } else {
+                    comment.setText(getString(R.string.pay_at_home));
+                    delaySubmitOrderData();
+                }
             }
         });
-        if (!sharedPref.isFirstOrder()){
-            builder.setNegativeButton(R.string.pay_online, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    zarinPalPayment();
-                }
-            });
-        }
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
         builder.show();
     }
 

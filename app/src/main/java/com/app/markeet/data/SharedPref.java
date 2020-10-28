@@ -19,6 +19,8 @@ public class SharedPref {
     private SharedPreferences prefs;
     private RemoteConfig remoteConfig;
 
+    private static final String NAME_STORE = "_.NAME_STORE";
+
     private static final String FCM_PREF_KEY = "_.FCM_PREF_KEY";
     private static final String FIRST_LAUNCH = "_.FIRST_LAUNCH";
     private static final String FIRST_ORDER = "_.FIRST_ORDER";
@@ -43,6 +45,23 @@ public class SharedPref {
         return sharedPreferences.getBoolean(FIRST_LAUNCH, true);
     }
 
+
+
+    /**
+     * Preference for Name Store
+     */
+    public void setNameStore(String nameStore) {
+        sharedPreferences.edit().putString(NAME_STORE, nameStore).apply();
+    }
+
+    public String getNameStore() {
+        return sharedPreferences.getString(NAME_STORE, null);
+    }
+
+    public boolean isNameStoreEmpty() {
+        return TextUtils.isEmpty(getNameStore());
+    }
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     /**
      * Preference for first order
      */
