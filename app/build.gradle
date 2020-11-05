@@ -59,6 +59,8 @@ dependencies {
     implementation 'com.github.samanzamani.persiandate:PersianDate:0.8'
     implementation 'com.mohamadamin:persianmaterialdatetimepicker:1.2.1'
     implementation 'com.zarinpal:purchase:0.0.8-beta'
+    // date picker
+    implementation 'com.github.aliab:Persian-Date-Picker-Dialog:1.5.2'
 
 
 }
