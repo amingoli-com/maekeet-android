@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -18,6 +19,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
@@ -61,6 +63,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import ir.hamsaa.persiandatepicker.Listener;
+import ir.hamsaa.persiandatepicker.PersianDatePickerDialog;
+import ir.hamsaa.persiandatepicker.util.PersianCalendar;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -90,7 +95,6 @@ public class ActivityCheckout extends AppCompatActivity {
     private Call<CallbackOrder> callbackCall = null;
     // construct dialog progress
     ProgressDialog progressDialog = null;
-    private Long g = 0L;
     private boolean payOnline = false; // in dialogConfirmCheckout();
 
     @Override
@@ -493,90 +497,38 @@ public class ActivityCheckout extends AppCompatActivity {
         datePickerDialog.show();
     }*/
 
-    long[] dateTimeMilSec;
-    String[] day;
-    private Calendar getDay(int DAY, int HOUR) {
-        final Calendar cal = Calendar.getInstance();
-        cal.set(Calendar.HOUR_OF_DAY, HOUR);
-        cal.add(Calendar.DATE, DAY);
-        return cal;
-    }
     private void dialogDatePicker() {
-        Calendar tody_9 = getDay(0,9);
-        Calendar tody_16 = getDay(0,16);
-        Calendar tomorrow_9 = getDay(1,9);
-        Calendar tomorrow_16 = getDay(1,16);
-        dateTimeMilSec = new long[] {
-                tody_9.getTimeInMillis(),
-                tody_16.getTimeInMillis(),
-                tomorrow_9.getTimeInMillis(),
-                tomorrow_16.getTimeInMillis()
-        };
+        d();
+    }
 
-        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
-        if (hour<9){
-            day = new String[]{
-                    getString(R.string.today) +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[0])
-                            +" "+ getString(R.string.between_9_13),
-                    getString(R.string.today) +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[1])
-                            +" "+ getString(R.string.between_16_21),
-                    getString(R.string.tomorrow)  +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[2])
-                            +" "+ getString(R.string.between_9_13),
-                    getString(R.string.tomorrow)  +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[3])
-                            +" "+ getString(R.string.between_16_21)
-            };
-        }else if (hour < 20){
-            day = new String[]{
-                    getString(R.string.today) +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[1])
-                            +" "+ getString(R.string.between_16_21),
-                    getString(R.string.tomorrow)  +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[2])
-                            +" "+ getString(R.string.between_9_13),
-                    getString(R.string.tomorrow)  +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[3])
-                            +" "+ getString(R.string.between_16_21)
-            };
-        }else {
-            day = new String[]{
-                    getString(R.string.tomorrow) +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[2])
-                            +" "+ getString(R.string.between_9_13),
-                    getString(R.string.tomorrow) +" "+ Tools.getFormattedDateSimple(dateTimeMilSec[3])
-                            +" "+ getString(R.string.between_16_21)
-            };
-        }
+    // Dialog date picker
+    private void d(){
+        PersianCalendar initDate = new PersianCalendar();
+        initDate.setPersianDate(1399, 8, 14);
+        PersianDatePickerDialog picker = new PersianDatePickerDialog(this)
+                .setPositiveButtonString(getString(R.string.submit))
+                .setNegativeButton(getString(R.string.cancel))
+                .setTodayButton(getString(R.string.today))
+                .setTodayButtonVisible(true)
+                .setMinYear(PersianDatePickerDialog.THIS_YEAR)
+                .setMaxYear(PersianDatePickerDialog.THIS_YEAR)
+                .setInitDate(initDate)
+                .setActionTextColor(Color.GRAY)
+                .setTypeFace(ResourcesCompat.getFont(this, R.font.iran_sans_medium))
+                .setTitleType(PersianDatePickerDialog.WEEKDAY_DAY_MONTH_YEAR)
+                .setShowInBottomSheet(true)
+                .setListener(new Listener() {
+                    @Override
+                    public void onDateSelected(PersianCalendar persianCalendar) {
+                        date_ship_millis = persianCalendar.getTimeInMillis();
+                        date_shipping.setText(Tools.getFormattedDate(date_ship_millis));
+                    }
+                    @Override
+                    public void onDismissed() {
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(getString(R.string.what_day_should_we_send));
-        builder.setItems(day, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int item) {
-                long d = 0;
-                switch (day.length){
-                    case 4:
-                        d = dateTimeMilSec[item];
-                        break;
-                    case 3:
-                        if (item==0){
-                            d = dateTimeMilSec[1];
-                        }else if (item==1){
-                            d = dateTimeMilSec[2];
-                        }else {
-                            d = dateTimeMilSec[3];
-                        }
-                        break;
-                    default:
-                        if (item==0){
-                            d = dateTimeMilSec[2];
-                        }else {
-                            d = dateTimeMilSec[3];
-                        }
-                        break;
-                }
-                // Do something with the selection
-                date_ship_millis = d;
-                date_shipping.setText(day[item]);
-                dialog.dismiss();
-            }
-        });
-        builder.setCancelable(true);
-        builder.show();
+                    }
+                });
+        picker.show();
     }
 
     // validation method
